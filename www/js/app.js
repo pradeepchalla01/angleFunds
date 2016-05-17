@@ -22,3 +22,17 @@ angular.module('starter', ['ionic'])
     }
   });
 })
+.config(function ($stateProvider, $urlRouterProvider) {
+  $stateProvider
+  .state('login', {
+    url: '/login',
+    templateUrl: 'js/login/login.html',
+    controller: 'LoginCtrl'
+  });
+  
+  // Thanks to Ben Noblet!
+  $urlRouterProvider.otherwise(function ($injector, $location) {
+    var $state = $injector.get("$state");
+    $state.go("login");
+  });
+});

@@ -1,0 +1,55 @@
+ion-view{
+	ion-content{
+		div{
+			text-align: center;
+			.imgDiv{
+				border-bottom: 1px solid #efefef;
+			}
+			.HospitalLogin.charity{
+				margin-top: 65px;
+				background-color: rgba(125, 63, 152, 0.44);
+			}
+			.HospitalLogin{
+			    margin: 12px;
+			    background: rgba(0, 188, 228, 0.44) none repeat scroll 0 0;
+			    border-radius: 30px;
+			    padding: 0 20px 20px;
+				.iconDiv{
+					.icon{
+						color: #7D3F98;
+						font-size: 90px;
+					}
+				}
+				.LoginHeader{
+					color: #fff;
+					font-size: 20px;
+				}
+				.FormDiv{
+					div{
+						margin-top: 15px;
+						label{
+							font-size: 16px;
+						}
+						input{
+							padding: 12px;
+						    border-radius: 4px;
+						    border: 1px solid #ccc;
+						}
+					}
+				}
+			}
+		}
+		footer{
+			margin-top: 40px;
+			border-top: 1px solid #aaa;
+			padding: 20px 20px 30px;
+			.footerIcons{
+				.icon{
+					font-size: 40px;
+					padding: 10px;
+					color: #7D3F98;
+				}
+			}
+		}
+	}
+}
