@@ -29,6 +29,11 @@ angular.module('angleFunds', ['ionic'])
     templateUrl: 'js/login/login.html',
     controller: 'LoginCtrl'
   })
+  .state('signup', {
+    url: '/signup',
+    templateUrl: 'js/signup/signup.partial.html',
+    controller: 'signupCtrl'
+  })
   .state('menu', {
     url: '/menu',
     abstract: true,

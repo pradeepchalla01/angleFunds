@@ -1,0 +1,73 @@
+<ion-view hide-nav-bar="true">
+	<ion-content class="padding login-content">
+        <div>
+            <div class="imgDiv">
+                <img src="img/Angelfundslogo_new.jpg">
+            </div>
+            <div class="signupFormDiv">
+            	<h2>REGISTER NEW USER</h2>
+            	<div class="formDiv">
+                    <div>
+                        <label>Contact Name</label>
+                        <input class="col" type="text" name="username" placeholder="Contact Name" ng-model="signup.contactName" ng-focus="hideErrorMsg('contactName','signup')">
+                        <div class="error-text text-center" ng-show="errors.signup.contactName">{{errors.signup.contactName}}</div>
+                    </div>
+                    <div>
+                        <label>Hospital Name</label>
+                        <input class="col" type="text" name="username" placeholder="Hospital Name" ng-model="signup.hospitalName" ng-focus="hideErrorMsg('hospitalName','signup')">
+                        <div class="error-text text-center" ng-show="errors.signup.hospitalName">{{errors.signup.hospitalName}}</div>
+                    </div>
+                    <div>
+                        <label>Address</label>
+                        <input class="col" type="text" name="username" placeholder="Address" ng-model="signup.address" ng-focus="hideErrorMsg('address','signup')">
+                        <div class="error-text text-center" ng-show="errors.signup.address">{{errors.signup.address}}</div>
+                    </div>
+                    <div>
+                        <label>Phone Number</label>
+                        <input class="col" type="tel" name="username" placeholder="Enter Your Mobile Number" ng-model="signup.phone" ng-focus="hideErrorMsg('phone','signup')">
+                        <div class="error-text text-center" ng-show="errors.signup.phone">{{errors.signup.phone}}</div>
+                    </div>
+                    <div>
+                        <label>Contact Email</label>
+                        <input class="col" type="email" name="username" placeholder="Enter Your Email" ng-model="signup.email" ng-focus="hideErrorMsg('email','signup')">
+                        <div class="error-text text-center" ng-show="errors.signup.userName">{{errors.signup.email}}</div>
+                    </div>
+                    <div>
+                     	<label>User Name</label>
+                        <input class="col" type="text" name="username" placeholder="User Name" ng-model="signup.userName" ng-focus="hideErrorMsg('userName','signup')">
+                        <div class="error-text text-center" ng-show="errors.signup.userName">{{errors.signup.userName}}</div>
+                    </div>
+                    <div>
+                        <label>Password</label>
+                        <input class="col" type="password" name="username" placeholder="Password" ng-model="signup.password" ng-focus="hideErrorMsg('password','signup')">
+                        <div class="error-text text-center" ng-show="errors.signup.password">{{errors.signup.password}}</div>
+                    </div>
+                    <div>
+                        <label>Confirm Password</label>
+                        <input class="col" type="password" name="username" placeholder="Confirm Password" ng-model="signup.confirmPassword" ng-focus="hideErrorMsg('confirmPassword','signup')">
+                        <div class="error-text text-center" ng-show="errors.signup.confirmPassword">{{errors.signup.confirmPassword}}</div>
+                    </div>
+                    <div class="col btnGroup">
+                    	<button class="button button-balanced" ng-click="register()">
+                    		Register
+						</button>
+						<button class="button button-positive" ng-click="reset()">
+						  	Reset
+						</button>
+						<button class="button button-positive" ui-sref="login">
+						 	Back
+						</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="signupFooter">
+            <p >© 2016 Angelfunds. All rights reserved | Designned By <strong> Bhaskar </strong></p>
+            <div class="col footerIcons">
+                <i class="icon ion-social-googleplus"></i>
+                <i class="icon ion-social-dribbble-outline"></i>
+                <i class="icon ion-social-facebook"></i>
+            </div>
+        </footer>
+	</ion-content>
+</ion-view>
