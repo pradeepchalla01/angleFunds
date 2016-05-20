@@ -1,0 +1,329 @@
+1. Login Webservice
+
+URL: http://localhost:port/AngelFunds/Login
+
+REQUEST: {
+			"username":"xxxx",
+			"password":"*****",
+			"type":"hospital/organization/admin"
+		 }
+RESPONSE: {
+			"status":"success/fail",
+			"reason":"success/failure reason",
+			"type":"hospital/organization/admin"
+			"contact name":"xxxx",
+			"id":"hospital user id / organization user id/admin id"
+			"key":"xxxxxx"			
+		  }
+
+2. Registration Webservice
+
+URL: http://localhost:port/AngelFunds/Registration
+
+REQUEST: {
+			"contact_name":"xxxxxx",
+			"id":"hospital id/ organization id",
+			"name":"hospital name/ organization name",
+			"address":"xxxxxxx",
+			"phone_number":"0000000000",
+			"contact_email":"xxx@xxx.xxx",
+			"username":"xxxxx",
+			"password":"*****",
+			"type":"hospital/organization"
+		 }
+RESPONSE: {
+			"status":"success/fail",
+			"reason":"success/failure reason",
+			"type":"hospital/organization"
+			"id":"hospital user id / organization user id"					
+		  }
+
+3. Master Data
+
+URL: http://localhost:port/AngelFunds/MasterData
+
+REQUEST: {
+			"type":"hospital/organization/occupation/desease/treatmenttype",
+			"key":"****"
+		 }
+RESPONSE: [
+			{
+				"id":"hospital/organization/occupation/desease/treatmenttype id",
+				"name":"hospital/organization/occupation/desease/treatmenttype name",				
+			},
+			{
+				"id":"hospital/organization/occupation/desease/treatmenttype id",
+				"name":"hospital/organization/occupation/desease/treatmenttype name",				
+			}
+		  ]
+
+4. Patient Registration
+
+URL: http://localhost:port/AngelFunds/PatientRegistration
+
+REQUEST: {
+			"patient_name":"",
+			"date_of_birth":"",
+			"gender":"",
+			"parent_guardian_name":"",
+			"primary_phone_number":"",
+			"alternate_phone_number":"",
+			"patient_email":"",
+			"doctor_name":"",
+			"diagnosis":"",
+			"stage":"",
+			"disease_id":"",
+			"disease_name":"",
+			"duration_ of_treatment":"",
+			"duration_ type":"",
+			"treatment_type_id":"",
+			"approximate_cost":"",
+			"monthly_family_income":"",
+			"tax_form_type":"pdf/doc/txt"
+			"tax_form":"",		
+			"email_template":"",
+			"jobholders_in_family":[
+									{"job_holder_name":"","job_hoder_occupation_id":"", "job_hoder_occupation":""},
+									{"job_holder_name":"","job_hoder_occupation_id":"", "job_hoder_occupation":""},	
+								   ]
+			"organizations":[organization id 1,organization id 2],
+			"key":""
+		 }
+
+RESPONSE: {
+			"status":"success/fail",
+			"reason":"success/failure reason",
+			"id":"Patient id"					
+		  }
+		  
+5. ORGANIZATION STATUS UPDATE
+
+URL: http://localhost:port/AngelFunds/PatientOrganizationStatusUpdate
+
+REQUEST: {
+			"patient_id":"",
+			"organization_id":"",
+			"status":"new/acknowledged/rejected/approved",
+			"remarks":"",
+			"key":""
+		 }
+
+RESPONSE: {
+			"status":"success/fail",
+			"reason":"success/failure reason",
+		  }
+6. GET PATIENT SUMMARY
+
+URL: http://localhost:port/AngelFunds/PatientSummary
+
+REQUEST: {
+			"hospital_id":""
+			"key":""
+		 }
+
+RESPONSE: [{
+			"patient_id":"",
+			"patient_name":"",
+			"doctor_name":"",
+			"status":""
+		  },
+		  {
+			"patient_id":"",
+			"patient_name":"",
+			"doctor_name":"",
+			"status":""
+		  }]
+
+7. GET PATIENT DETAILS
+
+URL: http://localhost:port/AngelFunds/PatientDetails
+
+REQUEST: {
+		    "patient_id":"",
+			"user_id":"",
+			"key":""
+		 }
+
+RESPONSE: {
+			"patient_id":"",
+			"patient_name":"",
+			"date_of_birth":"",
+			"gender":"",
+			"parent_guardian_name":"",
+			"primary_phone_number":"",
+			"alternate_phone_number":"",
+			"patient_email":"",
+			"doctor_name":"",
+			"diagnosis":"",
+			"stage":"",
+			"disease_id":"",
+			"disease_name":"",
+			"duration_ of_treatment":"",
+			"duration_ type":"",
+			"treatment_type_id":"",
+			"approximate_cost":"",
+			"monthly_family_income":"",
+			"tax_form_type":"pdf/doc/txt"
+			"tax_form":"",		
+			"email_template":"",
+			"jobholders_in_family":[
+									{"job_holder_name":"","job_hoder_occupation_id":"", "job_hoder_occupation":""},
+									{"job_holder_name":"","job_hoder_occupation_id":"", "job_hoder_occupation":""},	
+								   ]
+			"organizations":[organization id 1,organization id 2]			
+		 }
+
+8. UPDATE PATIENT DETAILS
+
+URL: http://localhost:port/AngelFunds/UpdatePatient
+
+REQUEST: {
+			"patient_id":"",
+			"patient_name":"",
+			"date_of_birth":"",
+			"gender":"",
+			"parent_guardian_name":"",
+			"primary_phone_number":"",
+			"alternate_phone_number":"",
+			"patient_email":"",
+			"doctor_name":"",
+			"diagnosis":"",
+			"stage":"",
+			"disease_id":"",
+			"disease_name":"",
+			"duration_ of_treatment":"",
+			"duration_ type":"",
+			"treatment_type_id":"",
+			"approximate_cost":"",
+			"monthly_family_income":"",
+			"tax_form_type":"pdf/doc/txt"
+			"tax_form":"",		
+			"email_template":"",
+			"jobholders_in_family":[
+									{"job_holder_name":"","job_hoder_occupation_id":"", "job_hoder_occupation":""},
+									{"job_holder_name":"","job_hoder_occupation_id":"", "job_hoder_occupation":""},	
+								   ]
+			"organizations":[organization id 1,organization id 2],
+			"user_id":"",
+			"key":""
+		 }
+
+RESPONSE: {
+			"status":"success/fail",
+			"reason":"success/failure reason",
+			"id":"Patient id"					
+		  }
+
+9. GET ORGANIZATION PATIENT PENDING STATUS SUMMARY
+
+URL: http://localhost:port/AngelFunds/PatientPendingStatusSummary
+
+REQUEST: {
+			"organization_id":""
+			"status":"All/New/Acknowledged/Rejected/Approved",
+			"key":""
+		 }
+
+RESPONSE: [{
+			"patient_id":"",
+			"patient_name":"",
+			"desease":"",
+			"doctor_name":"",
+			"status":""
+		  },
+		  {
+			"patient_id":"",
+			"patient_name":"",
+			"desease":"",
+			"doctor_name":"",
+			"status":""
+		  }]
+		  
+
+10. HOSPITAL WISE PATIENT REPORT
+
+URL: http://localhost:port/AngelFunds/HospitalWisePatientReport
+
+REQUEST: {
+			"hospital_id":"All/id",
+			"from_date":"",
+			"to_date":"",
+			"status":"All/New/Acknowledged/Rejected/Approved",
+			"key":""
+		 }
+
+RESPONSE: [{
+			"patient_name":"",
+			"date_of_birth":"",
+			"gender":"",
+			"doctor_name":"",
+			"hospital_name":"",
+			"desease":"",
+			"diagnosis":"",
+			"stage":"",
+			"duration_ of_treatment":"",
+			"duration_ type":"",
+			"treatment_type":"",
+			"approximate_cost":"",
+			"organization":"",
+			"status":""
+		  },
+		  {
+			"patient_name":"",
+			"date_of_birth":"",
+			"gender":"",
+			"doctor_name":"",
+			"desease":"",
+			"diagnosis":"",
+			"stage":"",
+			"duration_ of_treatment":"",
+			"duration_ type":"",
+			"treatment_type":"",
+			"approximate_cost":"",
+			"organization":"",
+			"status":""
+		  }]
+11. ORGANIZATION WISE PATIENT REPORT
+
+URL: http://localhost:port/AngelFunds/OrganizationWisePatientReport
+
+REQUEST: {
+			"Organization_id":"All/id",
+			"from_date":"",
+			"to_date":"",
+			"status":"All/New/Acknowledged/Rejected/Approved",
+			"key":""
+		 }
+
+RESPONSE: [{
+			"patient_name":"",
+			"date_of_birth":"",
+			"gender":"",
+			"doctor_name":"",
+			"hospital_name":"",
+			"desease":"",
+			"diagnosis":"",
+			"stage":"",
+			"duration_ of_treatment":"",
+			"duration_ type":"",
+			"treatment_type":"",
+			"approximate_cost":"",
+			"organization":"",
+			"status":""
+		  },
+		  {
+			"patient_name":"",
+			"date_of_birth":"",
+			"gender":"",
+			"doctor_name":"",
+			"desease":"",
+			"diagnosis":"",
+			"stage":"",
+			"duration_ of_treatment":"",
+			"duration_ type":"",
+			"treatment_type":"",
+			"approximate_cost":"",
+			"organization":"",
+			"status":""
+		  }]
+		  
