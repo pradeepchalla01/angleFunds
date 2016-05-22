@@ -1,8 +1,8 @@
 <ion-modal-view class="login-container">
-    <ion-content class="padding login-content" ng-class="isHospitalLogin ? 'hospital-login' : 'charity-login'">
+    <ion-content class="padding login-content" ng-class="loginType === 'hospital' ? 'hospital-login' : loginType === 'org' ? 'charity-login' :  'admin-login'">
         <div class="iconDiv text-center">
-            <i class="icon" ng-class="isHospitalLogin ? 'ion-android-add-circle' : 'ion-android-home'"></i>
-        	<p class="LoginHeader" ng-bind-html="isHospitalLogin ? 'Hospital' : 'Charity Organization'"></p>
+            <i class="icon" ng-class="loginType === 'hospital' ? 'ion-android-add-circle' : loginType === 'org' ? 'ion-android-home' : 'ion-person-stalker'"></i>
+        	<p class="LoginHeader" ng-bind-html="loginType === 'hospital' ? 'Hospital' : loginType === 'org' ? 'Charity Organization' : 'Admin'"></p>
         </div>
         <div class="FormDiv">
             <div>

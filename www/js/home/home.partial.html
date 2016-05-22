@@ -4,11 +4,14 @@
             <img src="img/Angelfundslogo_new.jpg">
         </div>
         <div class="logins">
-	        <button class="button button-block button-positive hospital-btn" ng-click="openLoginModal(true)">
-	            Login to Hospital
+	        <button class="button button-block button-positive hospital-btn" ng-click="openLoginModal('hospital')">
+	            Hospital Login
 	        </button>
-	        <button class="button button-block button-positive charity-btn" ng-click="openLoginModal(false)">
-	            Login to Charity Organization
+	        <button class="button button-block button-positive charity-btn" ng-click="openLoginModal('org')">
+	            Charity Organization Login
+	        </button>
+	        <button class="button button-block button-positive admin-btn" ng-click="openLoginModal('admin')">
+	            Admin Login
 	        </button>
         </div>
 	</ion-content>

@@ -31,6 +31,9 @@ ion-view{
 					.charity-btn{
 						@include button(rgba(125, 63, 152, 0.8), #fff, 40px, 15px);
 					}
+					.admin-btn{
+						@include button(#DE594E, #fff, 40px, 15px);
+					}
 				}
 			}
 			

@@ -9,8 +9,8 @@ angular.module('angleFunds')
 	}).then(function(modal) {
 		$scope.loginModal = modal;
 	});
-	$scope.openLoginModal = function(isHospital) {
-		$scope.isHospitalLogin = isHospital;
+	$scope.openLoginModal = function(loginType) {
+		$scope.loginType = loginType;
 		$scope.loginModal.show();
 	};
 	$scope.closeLoginModal = function(){
