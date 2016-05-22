@@ -1,0 +1,35 @@
+ion-view {
+	ion-content {
+		div {
+			text-align: left;
+			.error-message{
+				color: red;
+			}
+		}
+		.item-stacked-label{
+			.input-label{
+				display: block;
+			}
+
+		}
+		 
+		.list {
+			.name-occupation {
+				.input-label {
+					width: auto;
+				}
+				label{
+					margin-top: 10px;
+				}
+			}
+			label .input-label.has-input {
+				color: #019DD0 !important;
+				width: auto;
+
+			}
+			.save-patient-details {
+				text-align: center !important;
+			}
+		}
+	}
+}	
