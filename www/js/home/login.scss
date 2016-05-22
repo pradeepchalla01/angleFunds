@@ -45,9 +45,6 @@
 				.login-btn{
 					@include button(#337ab7, #fff, 40px, 15px);
 				}
-				.signup-btn{
-					@include button(#5cb85c, #fff, 40px, 15px);
-				}
 			}
 			.footer{
 				position: absolute;
