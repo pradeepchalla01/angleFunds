@@ -24,10 +24,10 @@ angular.module('angleFunds', ['ionic'])
 })
 .config(function ($stateProvider, $urlRouterProvider) {
   $stateProvider
-  .state('login', {
-    url: '/login',
-    templateUrl: 'js/login/login.html',
-    controller: 'LoginCtrl'
+  .state('home', {
+    url: '/home',
+    templateUrl: 'js/home/home.partial.html',
+    controller: 'homeCtrl'
   })
   .state('signup', {
     url: '/signup',
@@ -63,6 +63,6 @@ angular.module('angleFunds', ['ionic'])
   // Thanks to Ben Noblet!
   $urlRouterProvider.otherwise(function ($injector, $location) {
     var $state = $injector.get("$state");
-    $state.go("login");
+    $state.go("home");
   });
 });

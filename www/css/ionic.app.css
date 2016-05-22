@@ -9814,3 +9814,162 @@ a.button {
   opacity: 0;
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
+
+ion-view.home-container {
+  background-image: url("../img/app_logo.jpg");
+  background-size: cover; }
+  ion-view.home-container .home-content .scroll {
+    height: 100%; }
+    ion-view.home-container .home-content .scroll .imgDiv {
+      border-bottom: 1px solid #efefef; }
+      ion-view.home-container .home-content .scroll .imgDiv img {
+        width: 100%;
+        height: 175px; }
+    ion-view.home-container .home-content .scroll .logins {
+      position: absolute;
+      bottom: 0;
+      width: 100%; }
+      ion-view.home-container .home-content .scroll .logins .hospital-btn {
+        background: rgba(0, 188, 228, 0.8);
+        color: #fff;
+        min-height: 40px;
+        height: 40px;
+        font-size: 15px;
+        line-height: 0; }
+      ion-view.home-container .home-content .scroll .logins .charity-btn {
+        background: rgba(125, 63, 152, 0.8);
+        color: #fff;
+        min-height: 40px;
+        height: 40px;
+        font-size: 15px;
+        line-height: 0; }
+
+.login-container .login-content.hospital-login {
+  background: rgba(0, 188, 228, 0.44) none repeat scroll 0 0; }
+
+.login-container .login-content.charity-login {
+  background: rgba(125, 63, 152, 0.44) none repeat scroll 0 0; }
+
+.login-container .login-content .scroll {
+  height: 100%;
+  min-height: 600px;
+  padding: 0 20px 20px; }
+  .login-container .login-content .scroll .iconDiv {
+    padding: 15px 0; }
+    .login-container .login-content .scroll .iconDiv .icon {
+      color: #7D3F98;
+      font-size: 90px; }
+  .login-container .login-content .scroll .LoginHeader {
+    color: #fff;
+    font-size: 20px; }
+  .login-container .login-content .scroll .FormDiv {
+    padding: 20px 0; }
+    .login-container .login-content .scroll .FormDiv div {
+      margin-top: 15px; }
+      .login-container .login-content .scroll .FormDiv div label {
+        font-size: 16px; }
+      .login-container .login-content .scroll .FormDiv div input {
+        padding: 12px;
+        border-radius: 4px;
+        border: 1px solid #ccc; }
+      .login-container .login-content .scroll .FormDiv div .error-text {
+        color: #F11414;
+        margin-top: 0;
+        margin-bottom: 10px; }
+    .login-container .login-content .scroll .FormDiv .login-btn {
+      background: #337ab7;
+      color: #fff;
+      min-height: 40px;
+      height: 40px;
+      font-size: 15px;
+      line-height: 0; }
+    .login-container .login-content .scroll .FormDiv .signup-btn {
+      background: #5cb85c;
+      color: #fff;
+      min-height: 40px;
+      height: 40px;
+      font-size: 15px;
+      line-height: 0; }
+  .login-container .login-content .scroll .footer {
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    right: 10px; }
+    .login-container .login-content .scroll .footer .go-back {
+      margin: 10px 0 5px; }
+      .login-container .login-content .scroll .footer .go-back a {
+        font-size: 18px;
+        color: #369;
+        text-decoration: underline; }
+    .login-container .login-content .scroll .footer .footer-info {
+      border-top: 1px solid #e5e5e5;
+      padding: 10px; }
+      .login-container .login-content .scroll .footer .footer-info .footerIcons .icon {
+        font-size: 30px;
+        padding: 10px;
+        color: #7D3F98; }
+
+ion-view .bar-header h2 img {
+  height: 100%;
+  width: 140px; }
+
+ion-view .signup-header {
+  background-color: #019dd0;
+  /*border-radius: 42px 0;*/
+  padding: 5px; }
+  ion-view .signup-header .title {
+    color: #fff;
+    font-size: 20px;
+    font-weight: normal;
+    text-transform: uppercase; }
+
+ion-view ion-content .scroll .signupFormDiv h2 {
+  background-color: #019dd0;
+  color: #fff;
+  border-radius: 42px 0;
+  margin-top: 20px;
+  font-size: 27px;
+  padding: 5px;
+  font-weight: normal; }
+
+ion-view ion-content .scroll .signupFormDiv .formDiv {
+  padding: 10px; }
+  ion-view ion-content .scroll .signupFormDiv .formDiv div {
+    margin-bottom: 15px;
+    text-align: left; }
+    ion-view ion-content .scroll .signupFormDiv .formDiv div label {
+      font-size: 16px; }
+    ion-view ion-content .scroll .signupFormDiv .formDiv div input {
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 6px 12px; }
+    ion-view ion-content .scroll .signupFormDiv .formDiv div .error-text {
+      color: #F11414;
+      margin-top: 0;
+      margin-bottom: 10px; }
+  ion-view ion-content .scroll .signupFormDiv .formDiv .btnGroup {
+    text-align: center; }
+    ion-view ion-content .scroll .signupFormDiv .formDiv .btnGroup .button {
+      margin: 0; }
+      ion-view ion-content .scroll .signupFormDiv .formDiv .btnGroup .button.registration-btn {
+        background: #5cb85c;
+        color: #fff;
+        min-height: 40px;
+        height: 40px;
+        font-size: 15px;
+        line-height: 0; }
+      ion-view ion-content .scroll .signupFormDiv .formDiv .btnGroup .button.reset-btn {
+        background: #337ab7;
+        color: #fff;
+        min-height: 40px;
+        height: 40px;
+        font-size: 15px;
+        line-height: 0; }
+
+ion-view ion-content .scroll .footer-info {
+  border-top: 1px solid #e5e5e5;
+  padding: 10px; }
+  ion-view ion-content .scroll .footer-info .footerIcons .icon {
+    font-size: 30px;
+    padding: 10px;
+    color: #7D3F98; }

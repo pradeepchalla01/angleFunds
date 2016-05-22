@@ -1,0 +1,78 @@
+.login-container{
+	.login-content{
+		&.hospital-login{
+		    background: rgba(0, 188, 228, 0.44) none repeat scroll 0 0;
+		}
+		&.charity-login{
+			background: rgba(125, 63, 152, 0.44) none repeat scroll 0 0;
+		}
+		.scroll{
+			height: 100%;
+			min-height: 600px;
+		    padding: 0 20px 20px;
+			.iconDiv{
+				padding: 15px 0;
+				.icon{
+					color: #7D3F98;
+					font-size: 90px;
+				}
+			}
+			.LoginHeader{
+				color: #fff;
+				font-size: 20px;
+			}
+			.FormDiv{
+				padding: 20px 0;
+				div{
+					margin-top: 15px;
+					label{
+						font-size: 16px;
+					}
+					input{
+						padding: 12px;
+					    border-radius: 4px;
+					    border: 1px solid #ccc;
+					}
+					.error-text{
+						color: #F11414;
+						margin-top: 0;
+						margin-bottom: 10px;
+					}
+				}
+				.login-btn{
+					@include button(#337ab7, #fff, 40px, 15px);
+				}
+				.signup-btn{
+					@include button(#5cb85c, #fff, 40px, 15px);
+				}
+			}
+			.footer{
+				position: absolute;
+			    bottom: 0;
+			    left: 10px;
+			    right: 10px;
+			    .go-back{
+			    	margin: 10px 0 5px;
+			    	a{
+			    		font-size: 18px;
+			    		color: #369;
+			    		text-decoration: underline;
+			    	}
+			    }
+			    .footer-info{
+			    	border-top: 1px solid #e5e5e5;
+					padding: 10px;
+					.footerIcons{
+						.icon{
+							font-size: 30px;
+							padding: 10px;
+							color: #7D3F98;
+						}
+					}
+			    }
+				
+			}
+		}
+			    
+	}	
+}

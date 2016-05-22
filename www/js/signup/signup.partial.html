@@ -1,11 +1,13 @@
-<ion-view hide-nav-bar="true">
+<ion-view>
+    <ion-header-bar>
+        <h2 class="title"><img src="img/Angelfundslogo_new.jpg"></h2>
+    </ion-header-bar>
+     <ion-header-bar class="bar-subheader signup-header">
+        <h2 class="title">REGISTER NEW USER</h2>
+    </ion-header-bar>
 	<ion-content class="padding login-content">
         <div>
-            <div class="imgDiv">
-                <img src="img/Angelfundslogo_new.jpg">
-            </div>
             <div class="signupFormDiv">
-            	<h2>REGISTER NEW USER</h2>
             	<div class="formDiv">
                     <div>
                         <label>Contact Name</label>
@@ -47,27 +49,23 @@
                         <input class="col" type="password" name="username" placeholder="Confirm Password" ng-model="signup.confirmPassword" ng-focus="hideErrorMsg('confirmPassword','signup')">
                         <div class="error-text text-center" ng-show="errors.signup.confirmPassword">{{errors.signup.confirmPassword}}</div>
                     </div>
-                    <div class="col btnGroup">
-                    	<button class="button button-balanced" ng-click="register()">
-                    		Register
-						</button>
-						<button class="button button-positive" ng-click="reset()">
-						  	Reset
-						</button>
-						<button class="button button-positive" ui-sref="login">
-						 	Back
-						</button>
+                    <div class="row btnGroup">
+                        <div class="col padding-right"><button class="button button-balanced button-block registration-btn" ng-click="register()">Register</button></div>
+                        <div class="col padding-right"><button class="button button-positive button-block reset-btn" ng-click="reset()">Reset</button></div>
+                        <div class="col"><button class="button button-positive button-block reset-btn" ui-sref="home">Back</button></div>
                     </div>
                 </div>
             </div>
         </div>
-        <footer class="signupFooter">
-            <p >© 2016 Angelfunds. All rights reserved | Designned By <strong> Bhaskar </strong></p>
-            <div class="col footerIcons">
-                <i class="icon ion-social-googleplus"></i>
-                <i class="icon ion-social-dribbble-outline"></i>
-                <i class="icon ion-social-facebook"></i>
+        <div class="footer">
+            <div class="footer-info text-center">
+                <p >© 2016 Angelfunds. All rights reserved | Designned By <strong> Bhaskar </strong></p>
+                <div class="col footerIcons">
+                    <i class="icon ion-social-googleplus"></i>
+                    <i class="icon ion-social-dribbble-outline"></i>
+                    <i class="icon ion-social-facebook"></i>
+                </div>
             </div>
-        </footer>
+        </div>
 	</ion-content>
 </ion-view>

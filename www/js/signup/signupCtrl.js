@@ -7,28 +7,28 @@ angular.module('angleFunds')
 	$scope.register = function(){
 		$scope.errors.signup = {};
 		if(!$scope.signup.contactName){
-			$scope.errors.signup.contactName = 'This field is required';
+			$scope.errors.signup.contactName = 'Please Enter your Name';
 		}
 		if(!$scope.signup.hospitalName){
-			$scope.errors.signup.hospitalName = 'This field is required';
+			$scope.errors.signup.hospitalName = 'Please Enter your Hospital Name';
 		}
 		if(!$scope.signup.address){
-			$scope.errors.signup.address = 'This field is required';
+			$scope.errors.signup.address = 'Please Enter your Address';
 		}
 		if(!$scope.signup.phone){
-			$scope.errors.signup.phone = 'This field is required';
+			$scope.errors.signup.phone = 'Please Enter your Phone Number';
 		}
 		if(!$scope.signup.email){
-			$scope.errors.signup.email = 'This field is required';
+			$scope.errors.signup.email = 'Please Enter your Email Address';
 		}
 		if(!$scope.signup.userName){
-			$scope.errors.signup.userName = 'This field is required';
+			$scope.errors.signup.userName = 'Please Enter your Username';
 		}
 		if(!$scope.signup.password){
-			$scope.errors.signup.password = 'This field is required';
+			$scope.errors.signup.password = 'Please Enter your Passowrd';
 		}
 		if(!$scope.signup.confirmPassword){
-			$scope.errors.signup.confirmPassword = 'This field is required';
+			$scope.errors.signup.confirmPassword = 'Please Confirm your Passowrd';
 		}
 		if(angular.equals({}, $scope.errors.signup)) {
 			$state.go('login');
