@@ -4,8 +4,24 @@ angular.module('angleFunds')
 	$log.debug('New Patient');
 	$scope.newPatient = {};
 	$scope.errors = {};
+	$scope.organizations = ['organization 1', 'organization 2', 'organization3'];
+	$scope.organization= ['organization 1'];
+	  
+  	$scope.toggleSelection = function toggleSelection(organization) {
+    	var idx = $scope.organization.indexOf(organization);
+
+	    if (idx > -1) {
+	      $scope.organization.splice(idx, 1);
+	    }
+    	// is newly selected
+	    else {
+	      $scope.organization.push(organization);
+	    }
+  	};
+
 	$scope.savePatientDetails = function(){
 		$scope.errors.newPatient= {};
+		$scope.newPatient.organization = $scope.organization;
 			$log.debug('inside savePatientDetails');
 			if(!$scope.newPatient.name){
 				$scope.errors.newPatient.name = 'please enter patient name';
@@ -47,21 +63,25 @@ angular.module('angleFunds')
 				$scope.errors.newPatient.familyIncome = "please enter monthly family income";
 			}
 			if(!$scope.newPatient.occupation){
-				$scope.errors.newPatient.occupation = "please enter occupation";
+				$scope.errors.newPatient.occupation = "please enter atleast one occupation";
 			}
 			if(!$scope.newPatient.personName){
-				$scope.errors.newPatient.personName = "please enter personName";
+				$scope.errors.newPatient.personName = "please enter atleast one personName";
+			}
+			if($scope.organization.length > 0){
+				$scope.errors.newPatient.organization = "please select atleast one organization";
 			}
 			$log.debug($scope.newPatient);
-			/*if(angular.equals({}, $scope.errors.newPatient)) {
-				$state.go('menu.patientList');
-			}*/
-			newPatientService.setAddNewPatientDetails($scope.newPatient)
-			.then(function(){
 
-			}, function(error) {
-                console.log('error', error);
-            }); 
+			if(angular.equals({}, $scope.errors.newPatient)) {
+				newPatientService.setAddNewPatientDetails($scope.newPatient)
+					 .then(function(){
+					$state.go('menu.patientList');
+				}, function(error) {
+					console.log('error', error);
+				}); 
+				
+			}
 		}
 
 

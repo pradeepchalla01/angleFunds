@@ -92,48 +92,38 @@
   				<label class="item item-input">
   					<input type="text" ng-model = "newPatient.personName" placeholder="Name" ng-focus ="hideErrorMsg('personName','newPatient')">
   				</label>
-  				<span class="error-message"  ng-show="errors.newPatient.personName">{{errors.newPatient.personName}}</span>
   				<label class="item item-input">
   					<input type="text" placeholder="Name">
   				</label>
   				<label class="item item-input">
   					<input type="text" placeholder="Name">
   				</label>
+          <span class="error-message"  ng-show="errors.newPatient.personName">{{errors.newPatient.personName}}</span>
   			</div>
   			<div class="name-occupation col col-50">
   				<span class="input-label">Occupation</span>
   				<label class="item item-input">
   					<input type="text" ng-model = "newPatient.occupation" placeholder="Occupation" ng-focus ="hideErrorMsg('occupation','newPatient')">
   				</label>
-  				<span class="error-message"  ng-show="errors.newPatient.occupation">{{errors.newPatient.occupation}}</span>
   				<label class="item item-input">
   					<input type="text" placeholder="Occupation">
   				</label>
   				<label class="item item-input">
   					<input type="text" placeholder="Occupation">
   				</label>
+          <span class="error-message"  ng-show="errors.newPatient.occupation">{{errors.newPatient.occupation}}</span>
   			</div>
 		</div>
-      	<ul class="list">
+      	<ul ng-repeat="organization in organizations">
 	        <li class="item item-checkbox">
-	           <label class="checkbox"><input type="checkbox" checked=""></label> Organization A
+	           <label class="checkbox"><input type="checkbox" ng-checked="selection.indexOf(organization) > -1" ng-click="toggleSelection(organization)" value="{{organization}}"></label>{{ organization}}
 	        </li>
-	        <li class="item item-checkbox">
-	           <label class="checkbox"><input type="checkbox"></label> Organization B
-	        </li>
-	        <li class="item item-checkbox">
-	           <label class="checkbox"><input type="checkbox"></label> Organization C
-	        </li>
-	    </ul>
+	     </ul>
+      <span class="error-message"  ng-show="errors.newPatient.organization">{{errors.newPatient.organization}}</span>
 	    <div class="col btnGroup save-patient-details">
-        	<button class="button button-balanced" ng-click="savePatientDetails()">
-        		Register
-			</button>
-			<button class="button button-positive" ng-click="reset()">
-			  	Reset
-			</button>
-        </div>
-
+        	<button class="button button-balanced" ng-click="savePatientDetails()">Register</button>
+			    <button class="button button-positive" ng-click="reset()">Reset</button>
+      </div>
 	</div>
   </ion-content>
 </ion-view>
