@@ -32,10 +32,11 @@ ion-view{
 						@include button(rgba(125, 63, 152, 0.8), #fff, 40px, 15px);
 					}
 					.admin-btn{
-						@include button(#DE594E, #fff, 40px, 15px);
+						@include button(rgba(222, 89, 78, 0.8), #fff, 40px, 15px);
+
 					}
 					.signup-btn{
-						@include button(#5cb85c, #fff, 40px, 15px);
+						@include button(rgba(92, 184, 92, 0.8), #fff, 40px, 15px);
 					}
 				}
 			}
