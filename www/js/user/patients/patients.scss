@@ -1,0 +1,29 @@
+ion-view{
+	ion-content{
+		.scroll{
+			.patientList{
+				.buttons{
+					text-align: right;
+					.editButton{
+						line-height: 30px;
+						margin: 5px;
+						min-height: 35px;
+					}
+				}
+				ion-list{
+					ion-item{
+						.patientDiv{
+							text-align: left;
+						}
+						div{
+							.arrowIcon{
+								position: absolute;
+								right: 25px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

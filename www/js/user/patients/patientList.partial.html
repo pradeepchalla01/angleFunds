@@ -1,5 +1,30 @@
-<ion-view view-title="Title">
-  <ion-content>
-    Patient List
-  </ion-content>
+<ion-view view-title="Patient List">
+    <ion-content>
+	    <div class="patientList">
+		  	<div class="buttons">
+		        <button class="button button-calm editButton" ng-click="data.showEdit = !data.showEdit">
+		            Edit
+		        </button>
+	        </div>
+	      	<!-- <button class="button" ng-click="data.showEdit = !data.showEdit">
+	        	Edit
+	      	</button> -->
+	      	<ion-list show-reorder="data.showEdit">
+		    	<ion-item ng-repeat="patient in patientList" class="item-remove-animate">
+	  	          	<ion-reorder-button class="ion-ios-compose-outline" 
+	                 	ng-click="editPatient(patient)">
+					</ion-reorder-button>
+		          	<div class="patientDiv" ng-click="isExpand = !isExpand;">
+		          		<span>{{patient.patient_name}}</span>	
+	      				<span class="arrowIcon" ng-show="!isExpand"><i class="icon ion-chevron-down"></i></span>
+		          		<span class="arrowIcon" ng-show="isExpand"><i class="icon ion-chevron-up"></i></span>
+		        	</div>
+		        	<div class="item-description" ng-show="isExpand">
+		        		<div>{{patient.doctor_name}}</div>
+		        		<div>{{patient.doctor_name}}</div>
+			      	</div>
+		        </ion-item>
+	      	</ion-list>
+	    </div>
+    </ion-content>
 </ion-view>

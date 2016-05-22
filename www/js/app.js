@@ -41,6 +41,11 @@ angular.module('angleFunds', ['ionic'])
     controller: 'MenuCtrl'
   })
 
+  .state('patientEdit', {
+    url: '/patientEdit',
+    templateUrl: 'js/user/patients/patientEdit.partial.html',
+    controller: 'PatientListCtrl'
+  })
   .state('menu.newPatient', {
     url: '/newPatient',
     views: {
