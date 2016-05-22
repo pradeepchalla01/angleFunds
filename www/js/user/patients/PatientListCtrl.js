@@ -2,7 +2,8 @@ angular.module('angleFunds')
 
 .controller('PatientListCtrl', function($log, $scope, $state, patientFactory ) {
 	$log.debug('PatientList controller entered');
-	$scope.isExpand = false;	
+	$scope.isExpand = false;
+	$scope.data = {};	
 	$scope.patientList = [];
 	patientFactory.getPatientList().then(function(result){
 		console.log(result);

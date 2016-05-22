@@ -1,4 +1,9 @@
 ion-view{
+	.show-edit-btn{
+		font-size: 15px !important;
+		font-weight: 600 !important;
+		color: #369 !important;
+	}
 	ion-content{
 		.scroll{
 			.patientList{
@@ -14,11 +19,17 @@ ion-view{
 					ion-item{
 						.patientDiv{
 							text-align: left;
-						}
-						div{
 							.arrowIcon{
 								position: absolute;
 								right: 25px;
+							}
+						}
+						.patient-details{
+							.row{
+								font-size: 15px;
+								.col-60{
+									font-weight: 600;
+								}
 							}
 						}
 					}
