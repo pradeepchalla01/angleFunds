@@ -4,6 +4,6 @@ angular.module('angleFunds')
 	$log.debug('MenuCtrl controller entered');
 	$scope.logout = function(){
 		console.log('logout function');
-		$state.go('login');
+		$state.go('home');
 	}
 });

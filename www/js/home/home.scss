@@ -1,0 +1,40 @@
+@mixin button($bgcolor, $color, $height, $fontsize){
+	background: $bgcolor;
+	color: $color;
+	min-height: $height;
+	height: $height;
+	font-size: $fontsize;
+	line-height: 0;
+}
+
+ion-view{
+	&.home-container{
+		background-image: url("../img/app_logo.jpg");
+		background-size: cover;
+		.home-content{
+			.scroll{
+				height: 100%;
+				.imgDiv{
+					border-bottom: 1px solid #efefef;
+					img{
+						width: 100%;
+						height: 175px;
+					}
+				}
+				.logins{
+					position: absolute;
+					bottom: 0;
+					width: 100%;
+					.hospital-btn{
+						@include button(rgba(0, 188, 228, 0.80), #fff, 40px, 15px);
+					}
+					.charity-btn{
+						@include button(rgba(125, 63, 152, 0.8), #fff, 40px, 15px);
+					}
+				}
+			}
+			
+		}
+	}
+	
+}

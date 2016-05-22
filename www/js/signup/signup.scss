@@ -1,4 +1,23 @@
 ion-view{
+	.bar-header{
+		h2{
+			img{
+				height:100%;
+				width: 140px;
+			}
+		}
+	}
+	.signup-header{
+		background-color: #019dd0;
+		/*border-radius: 42px 0;*/
+		padding: 5px;
+		.title{
+			color: #fff;
+			font-size: 20px;
+			font-weight: normal;
+			text-transform: uppercase;
+		}
+	}
 	ion-content{
 		.scroll{
 			.signupFormDiv{
@@ -32,12 +51,29 @@ ion-view{
 					}
 					.btnGroup{
 						text-align: center;
+						.button{
+							margin: 0;
+							&.registration-btn{
+								@include button(#5cb85c, #fff, 40px, 15px);
+							}
+							&.reset-btn{
+								@include button(#337ab7, #fff, 40px, 15px);
+							}
+						}
 					}
 				}
 			}
-			.signupFooter{
-				margin-top: 0px;
-			}
+			.footer-info{
+		    	border-top: 1px solid #e5e5e5;
+				padding: 10px;
+				.footerIcons{
+					.icon{
+						font-size: 30px;
+						padding: 10px;
+						color: #7D3F98;
+					}
+				}
+		    }
 		}
 	}
 }
