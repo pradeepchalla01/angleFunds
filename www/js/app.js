@@ -51,7 +51,7 @@ angular.module('angleFunds', ['ionic'])
     views: {
       'menuContent': {
         templateUrl: 'js/user/patients/newPatient.partial.html',
-        controller: 'PatientListCtrl'
+        controller: 'NewPatientCtrl'
       }
     }
   })
