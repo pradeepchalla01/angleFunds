@@ -1,5 +1,29 @@
-<ion-view view-title="Edit Patient">
+<ion-view>
+<ion-header-bar class="bar-subheader signup-header">
+    <h2 class="title">EDIT PATIENT</h2>
+</ion-header-bar>
   <ion-content>
-    Edit Patient
+    <div class="list newPatient-registration">
+  		<label class="item item-input item-stacked-label">
+    		<span class="input-label">Name</span>
+    		<input type="text" ng-model="newPatient.name" placeholder="Contact Name" ng-focus="hideErrorMsg('name','newPatient')">
+    		<span class="error-message"  ng-show="errors.newPatient.name">{{errors.newPatient.name}}</span>
+  		</label>
+   		<label class="item item-input item-stacked-label">
+	    	<span class="input-label">Parent/Guardian Name</span>
+	    	<input type="text" ng-model="newPatient.parentName" placeholder="Parent/Guardian Name" ng-focus="hideErrorMsg('parentName','newPatient')">
+	    	<span class="error-message"  ng-show="errors.newPatient.parentName">{{errors.newPatient.parentName}}</span>
+	  	</label>
+	  	<label class="item item-input item-stacked-label">
+	    	<span class="input-label">Primary Phone Number</span>
+	    	<input type="text" ng-model="newPatient.phone" placeholder="Primary Phone Number" ng-focus="hideErrorMsg('phone','newPatient')">
+	    	<span class="error-message"  ng-show="errors.newPatient.phone">{{errors.newPatient.phone}}</span>
+	  	</label>
+	  	<label class="item item-input item-stacked-label">
+	    	<span class="input-label">Alternate phone Number</span>
+	    	<input type="text" ng-model="newPatient.alterPhone" placeholder="Alternate phone Number" ng-focus="hideErrorMsg('alterPhone','newPatient')">
+	    	<span class="error-message"  ng-show="errors.newPatient.alterPhone">{{errors.newPatient.alterPhone}}</span>
+	  	</label>
+		</div>
   </ion-content>
 </ion-view>

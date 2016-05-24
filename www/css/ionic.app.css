@@ -9843,12 +9843,29 @@ ion-view.home-container {
         height: 40px;
         font-size: 15px;
         line-height: 0; }
+      ion-view.home-container .home-content .scroll .logins .admin-btn {
+        background: rgba(222, 89, 78, 0.8);
+        color: #fff;
+        min-height: 40px;
+        height: 40px;
+        font-size: 15px;
+        line-height: 0; }
+      ion-view.home-container .home-content .scroll .logins .signup-btn {
+        background: rgba(92, 184, 92, 0.8);
+        color: #fff;
+        min-height: 40px;
+        height: 40px;
+        font-size: 15px;
+        line-height: 0; }
 
 .login-container .login-content.hospital-login {
   background: rgba(0, 188, 228, 0.44) none repeat scroll 0 0; }
 
 .login-container .login-content.charity-login {
   background: rgba(125, 63, 152, 0.44) none repeat scroll 0 0; }
+
+.login-container .login-content.admin-login {
+  background-color: #F9B1AB; }
 
 .login-container .login-content .scroll {
   height: 100%;
@@ -9878,13 +9895,6 @@ ion-view.home-container {
         margin-bottom: 10px; }
     .login-container .login-content .scroll .FormDiv .login-btn {
       background: #337ab7;
-      color: #fff;
-      min-height: 40px;
-      height: 40px;
-      font-size: 15px;
-      line-height: 0; }
-    .login-container .login-content .scroll .FormDiv .signup-btn {
-      background: #5cb85c;
       color: #fff;
       min-height: 40px;
       height: 40px;
@@ -9973,3 +9983,48 @@ ion-view ion-content .scroll .footer-info {
     font-size: 30px;
     padding: 10px;
     color: #7D3F98; }
+
+ion-view .show-edit-btn {
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  color: #369 !important; }
+
+ion-view ion-content .scroll .patientList .buttons {
+  text-align: right; }
+  ion-view ion-content .scroll .patientList .buttons .editButton {
+    line-height: 30px;
+    margin: 5px;
+    min-height: 35px; }
+
+ion-view ion-content .scroll .patientList ion-list ion-item .patientDiv {
+  text-align: left; }
+  ion-view ion-content .scroll .patientList ion-list ion-item .patientDiv .arrowIcon {
+    position: absolute;
+    right: 25px; }
+
+ion-view ion-content .scroll .patientList ion-list ion-item .patient-details .row {
+  font-size: 15px; }
+  ion-view ion-content .scroll .patientList ion-list ion-item .patient-details .row .col-60 {
+    font-weight: 600; }
+
+ion-view ion-content div {
+  text-align: left; }
+  ion-view ion-content div .input-label {
+    color: #00B9F5 !important; }
+  ion-view ion-content div .date-of-birth {
+    padding-left: 15px;
+    width: auto; }
+  ion-view ion-content div .error-message {
+    color: red; }
+
+ion-view ion-content .item-stacked-label .input-label {
+  display: block; }
+
+ion-view ion-content .list .name-occupation .input-label {
+  width: auto; }
+
+ion-view ion-content .list .name-occupation label {
+  margin-top: 10px; }
+
+ion-view ion-content .list .save-patient-details {
+  text-align: center !important; }

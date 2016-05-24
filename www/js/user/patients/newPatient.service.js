@@ -11,7 +11,7 @@ angular
         };
         return service;
 
-         function setAddNewPatientDetails(patientDetails) {
+        function setAddNewPatientDetails(patientDetails) {
             $log.debug('****Inside setAddNewPatientDetails');
 
             return $http({
@@ -22,4 +22,15 @@ angular
                 return response.data;
             });
         }
+
+        function getPatientDetails(patient){
+               return $http({
+                method: 'get',
+                url: 'AngelFunds/PatientRegistration',
+                data: patientDetails
+            }).then(function(response) {
+                return response.data;
+            });
+        }
+
     }

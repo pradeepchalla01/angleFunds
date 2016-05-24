@@ -6,11 +6,12 @@ angular.module('angleFunds')
 	$scope.data = {};	
 	$scope.patientList = [];
 	patientFactory.getPatientList().then(function(result){
-		console.log(result);
+		
 		$scope.patientList = result;
-		console.log($scope.patientList);
+		/*console.log($scope.patientList);*/
 	});
-	$scope.editPatient = function(){
-		$state.go('patientEdit');
+	$scope.editPatient = function(patient){
+		var patient_id = patient.patient_id;
+		$state.go('patientEdit', { 'patient_id' : patient_id});
 	}
 });

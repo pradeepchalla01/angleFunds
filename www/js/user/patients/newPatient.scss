@@ -1,6 +1,13 @@
 ion-view {
 	ion-content {
 		div {
+			.input-label{
+				color: #00B9F5 !important;
+			}
+			.date-of-birth{
+				padding-left: 15px;
+				width: auto;
+			}
 			text-align: left;
 			.error-message{
 				color: red;
@@ -25,6 +32,7 @@ ion-view {
 			.save-patient-details {
 				text-align: center !important;
 			}
+
 		}
 	}
 }	
