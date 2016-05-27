@@ -15,7 +15,7 @@
 	      	<ion-list show-reorder="data.showEdit">
 		    	<ion-item ng-repeat="patient in patientList" class="item-remove-animate">
 	  	          	<ion-reorder-button class="ion-ios-compose-outline" 
-	                 	ng-click="editPatient(patient)">
+	                 	ng-click="editPatient(patient.patient_id)">
 					</ion-reorder-button>
 		          	<div class="patientDiv" ng-click="isExpand = !isExpand;">
 		          		<span>{{patient.patient_name}}</span>	

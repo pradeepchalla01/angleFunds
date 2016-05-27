@@ -9862,10 +9862,15 @@ ion-view.home-container {
   background: rgba(0, 188, 228, 0.44) none repeat scroll 0 0; }
 
 .login-container .login-content.charity-login {
-  background: rgba(125, 63, 152, 0.44) none repeat scroll 0 0; }
+  background: rgba(193, 117, 170, 0.44) none repeat scroll 0 0; }
 
 .login-container .login-content.admin-login {
   background-color: #F9B1AB; }
+
+.login-container .login-content .login > .item {
+  padding: 6px 0 5px 1px !important;
+  border-style: none;
+  border-bottom: 1px solid #ffffff; }
 
 .login-container .login-content .scroll {
   height: 100%;

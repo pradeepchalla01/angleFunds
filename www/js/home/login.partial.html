@@ -4,8 +4,19 @@
             <i class="icon" ng-class="loginType === 'hospital' ? 'ion-android-add-circle' : loginType === 'org' ? 'ion-android-home' : 'ion-person-stalker'"></i>
         	<p class="LoginHeader" ng-bind-html="loginType === 'hospital' ? 'Hospital' : loginType === 'org' ? 'Charity Organization' : 'Admin'"></p>
         </div>
-        <div class="FormDiv">
-            <div>
+            <div class="list login">
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">User Name</span>
+                    <input type="text" name="username"  placeholder="Patient Name" ng-model="login.userName" ng-focus="hideErrorMsg('userName','login')">
+                    <span class="error-text text-center" ng-show="errors.login.userName">{{errors.login.userName}}</span>
+                </label>
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Password</span>
+                    <input type="text" type="password" name="Password" placeholder="Password" ng-model="login.password" ng-model="login.password" ng-focus="hideErrorMsg('password','login')">
+                    <div class="error-text text-center" ng-show="errors.login.password">{{errors.login.password}}</div>
+                </label>
+            </div>
+            <!-- <div>
                 <label>User Name</label>
                 <input class="col" type="text" name="username" placeholder="User name or Email" ng-model="login.userName" ng-focus="hideErrorMsg('userName','login')">
                 <div class="error-text text-center" ng-show="errors.login.userName">{{errors.login.userName}}</div>
@@ -14,12 +25,11 @@
                 <label>Password</label>
                 <input class="col" type="password" name="Password" placeholder="Password" ng-model="login.password" ng-focus="hideErrorMsg('password','login')">
                 <div class="error-text text-center" ng-show="errors.login.password">{{errors.login.password}}</div>
-            </div>
+            </div> -->
 	        <button class="button button-block button-positive login-btn" ng-click="login()">
 	            Login
 	        </button>
     	    <div class="go-back text-center" ng-click="closeLoginModal()"><a> Cancel </a></div>
-        </div>
         <div class="footer ng-hide">
 	        <div class="footer-info text-center">
 	            <p >© 2016 Angelfunds. All rights reserved | Designned By <strong> Bhaskar </strong></p>

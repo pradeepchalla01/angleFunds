@@ -15,6 +15,7 @@ angular.module('angleFunds')
 	};
 	$scope.closeLoginModal = function(){
 		$scope.errors = {};
+		$scope.login ={};
 		$scope.loginModal.hide();	
 	}
 	$scope.signup = function(){
