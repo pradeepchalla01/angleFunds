@@ -4,17 +4,17 @@
             <i class="icon" ng-class="loginType === 'hospital' ? 'ion-android-add-circle' : loginType === 'org' ? 'ion-android-home' : 'ion-person-stalker'"></i>
         	<p class="LoginHeader" ng-bind-html="loginType === 'hospital' ? 'Hospital' : loginType === 'org' ? 'Charity Organization' : 'Admin'"></p>
         </div>
-            <div class="list login">
-                <label class="item item-input item-floating-label">
+            <div class="list FormDiv">
+                <label class="item item-input item-floating-label"  ng-class="{'has-error' : errors.login.userName}">
                     <span class="input-label">User Name</span>
-                    <input type="text" name="username"  placeholder="Patient Name" ng-model="login.userName" ng-focus="hideErrorMsg('userName','login')">
-                    <span class="error-text text-center" ng-show="errors.login.userName">{{errors.login.userName}}</span>
+                    <input type="text" name="username"  placeholder="Patient Name" ng-model="loginData.userName" ng-focus="hideErrorMsg('userName','login')">
                 </label>
-                <label class="item item-input item-floating-label">
+                <div class="error-text text-center" ng-show="errors.login.userName">{{errors.login.userName}}</div>
+                <label class="item item-input item-floating-label" ng-class="{'has-error' : errors.login.password}">
                     <span class="input-label">Password</span>
-                    <input type="text" type="password" name="Password" placeholder="Password" ng-model="login.password" ng-model="login.password" ng-focus="hideErrorMsg('password','login')">
-                    <div class="error-text text-center" ng-show="errors.login.password">{{errors.login.password}}</div>
+                    <input type="text" type="password" name="Password" placeholder="Password" ng-model="loginData.password" ng-focus="hideErrorMsg('password','login')">
                 </label>
+                <div class="error-text text-center" ng-show="errors.login.password">{{errors.login.password}}</div>
             </div>
             <!-- <div>
                 <label>User Name</label>

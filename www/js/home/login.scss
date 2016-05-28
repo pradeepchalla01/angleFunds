@@ -8,15 +8,8 @@
 		}
 		&.admin-login{
 			background-color: #F9B1AB;
-		}
-		.login >.item {
-				padding: 6px 0 5px 1px !important;
-				border-style: none;
-				border-bottom: 1px solid #ffffff; 
-			}			
+		}	
 		.scroll{
-			height: 100%;
-			min-height: 600px;
 		    padding: 0 20px 20px;
 			.iconDiv{
 				padding: 15px 0;
@@ -31,25 +24,24 @@
 			}
 			.FormDiv{
 				padding: 20px 0;
-				div{
-					margin-top: 15px;
-					label{
-						font-size: 16px;
+				.item {
+					&.item-input{
+						padding: 6px 0 5px 1px !important;
+						border-style: none;
+						border-bottom: 1px solid #ffffff; 
 					}
-					input{
-						padding: 12px;
-					    border-radius: 4px;
-					    border: 1px solid #ccc;
+					&.has-error{
+						border-bottom: 1px solid #F11414 !important;
 					}
-					.error-text{
-						color: #F11414;
-						margin-top: 0;
-						margin-bottom: 10px;
-					}
+				}	
+				.error-text{
+					color: #F11414;
+					margin-top: 0;
+					margin-bottom: 10px;
 				}
-				.login-btn{
-					@include button(#337ab7, #fff, 40px, 15px);
-				}
+			}
+			.login-btn{
+				@include button(#337ab7, #fff, 40px, 15px);
 			}
 			.footer{
 				position: absolute;
