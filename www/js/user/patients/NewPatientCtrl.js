@@ -4,7 +4,7 @@ angular.module('angleFunds')
 	$scope.newPatient = {};
 	$scope.errors = {};
 	$scope.organizations = ['organization 1', 'organization 2', 'organization3'];
-	$scope.organization= ['organization 1'];
+	$scope.organization = ['organization 1'];
 	  
   	$scope.toggleSelection = function toggleSelection(org) {
     	var idx = $scope.organization.indexOf(org);
@@ -19,84 +19,85 @@ angular.module('angleFunds')
   	};
 
 	$scope.newPatient.onezoneDatepicker = {
-	    date: new Date(), // MANDATORY                     
+	    date: new Date("01/01/2016"), // MANDATORY                     
 	};
 
 	$scope.savePatientDetails = function(){
 		$scope.errors.newPatient= {};
 		$scope.newPatient.organization = $scope.organization;
-			if(!$scope.newPatient.name){
-				$scope.errors.newPatient.name = 'please enter patient name';
+			if(!$scope.newPatient.patient_name){
+				$scope.errors.newPatient.patient_name = 'please enter patient name';
+				return false;
 			} 
 			if(!$scope.newPatient.onezoneDatepicker){
 				$scope.errors.newPatient.onezoneDatepicker = 'please enter patient date of birth';
 			}
-			if(!$scope.newPatient.parentName){
-				$scope.errors.newPatient.parentName = "please enter patient's parent name";
+			if(!$scope.newPatient.parent_guardian_name){
+				$scope.errors.newPatient.parent_guardian_name = "please enter patient's parent name";
 			}
-			if(!$scope.newPatient.phone){
-				$scope.errors.newPatient.phone = "please enter valid phone number";
+			if(!$scope.newPatient.primary_phone_number){
+				$scope.errors.newPatient.primary_phone_number = "please enter valid phone number";
 			}else{
-				var evt = $scope.newPatient.phone;
+				var evt = $scope.newPatient.primary_phone_number;
 				if(!isNaN(evt)){
 					if(!(evt.length == 10)){
-						$scope.errors.newPatient.phone = "Phone number is incorrect";	
+						$scope.errors.newPatient.primary_phone_number = "Phone number is incorrect";	
 					}
 				}else{
-					$scope.errors.newPatient.phone = "please enter numbers only";		
+					$scope.errors.newPatient.primary_phone_number = "please enter numbers only";		
 				}
 			}
-			if(!$scope.newPatient.alterPhone){
-				$scope.errors.newPatient.alterPhone = "please enter Alternate phone number";
+			if(!$scope.newPatient.alternate_phone_number){
+				$scope.errors.newPatient.alternate_phone_number = "please enter Alternate phone number";
 			}else{
-				var evt = $scope.newPatient.alterPhone;
+				var evt = $scope.newPatient.alternate_phone_number;
 				if(!isNaN(evt)){
 					if(!(evt.length == 10)){
-						$scope.errors.newPatient.alterPhone = "Phone number is incorrect";	
+						$scope.errors.newPatient.alternate_phone_number = "Phone number is incorrect";	
 					}
 				}else{
-					$scope.errors.newPatient.alterPhone = "please enter numbers only";		
+					$scope.errors.newPatient.alternate_phone_number = "please enter numbers only";		
 				}
 			}
-			if(!$scope.newPatient.email){
-				$scope.errors.newPatient.email = "please enter email address";
+			if(!$scope.newPatient.patient_email){
+				$scope.errors.newPatient.patient_email = "please enter email address";
 			}else{
-			    var x = $scope.newPatient.email;
+			    var x = $scope.newPatient.patient_email;
 			    var atpos = x.indexOf("@");
 			    var dotpos = x.lastIndexOf(".");
 			    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
-			        $scope.errors.newPatient.email = "please enter email address";
+			        $scope.errors.newPatient.patient_email = "please enter email address";
 			    }
 			}
-			if(!$scope.newPatient.doctorName){
-				$scope.errors.newPatient.doctorName = "please enter doctorn name";
+			if(!$scope.newPatient.doctor_name){
+				$scope.errors.newPatient.doctor_name = "please enter doctorn name";
 			}
 			if(!$scope.newPatient.diagnosis){
 				$scope.errors.newPatient.diagnosis = "please enter diagnosis";
 			}
-			if(!$scope.newPatient.disease){
-				$scope.errors.newPatient.disease = "please enter disease";
+			if(!$scope.newPatient.disease_name){
+				$scope.errors.newPatient.disease_name = "please enter disease";
 			}
-			if(!$scope.newPatient.duration){
-				$scope.errors.newPatient.duration = "please enter duration time";
+			if(!$scope.newPatient.duration_of_treatment){
+				$scope.errors.newPatient.duration_of_treatment = "please enter duration time";
 			}
-			if(!$scope.newPatient.typeOfTreatment){
-				$scope.errors.newPatient.typeOfTreatment = "please enter type of treatment";
+			if(!$scope.newPatient.duration_type){
+				$scope.errors.newPatient.duration_type = "please enter type of treatment";
 			}
-			if(!$scope.newPatient.appCost){
-				$scope.errors.newPatient.appCost = "please enter approximate cost";
+			if(!$scope.newPatient.approximate_cost){
+				$scope.errors.newPatient.approximate_cost = "please enter approximate cost";
 			}else {
-				var appCost = $scope.newPatient.appCost;
-				if(isNaN(appCost)){
-					$scope.errors.newPatient.appCost = "please enter approximate cost in numbers ";	
+				var approximate_cost = $scope.newPatient.approximate_cost;
+				if(isNaN(approximate_cost)){
+					$scope.errors.newPatient.approximate_cost = "please enter approximate cost in numbers ";	
 				}
 			}
-			if(!$scope.newPatient.familyIncome){
-				$scope.errors.newPatient.familyIncome = "please enter monthly family income";
+			if(!$scope.newPatient.monthly_family_income){
+				$scope.errors.newPatient.monthly_family_income = "please enter monthly family income";
 			}else {
-				var familyIncome = $scope.newPatient.familyIncome;
-				if(isNaN(familyIncome)){
-					$scope.errors.newPatient.familyIncome = "please enter familyIncome in numbers ";	
+				var monthly_family_income = $scope.newPatient.monthly_family_income;
+				if(isNaN(monthly_family_income)){
+					$scope.errors.newPatient.monthly_family_income = "please enter familyIncome in numbers ";	
 				}
 			}
 			if(!$scope.newPatient.occupation){
@@ -108,7 +109,8 @@ angular.module('angleFunds')
 			if($scope.organization.length > 0){
 				$scope.errors.newPatient.organization = "please select atleast one organization";
 			}
-
+			console.log($scope.newPatient);
+			$log.debug($scope.errors.newPatient);
 			//calling the service method
 			if(angular.equals({}, $scope.errors.newPatient)) {
 				newPatientService.setAddNewPatientDetails($scope.newPatient)
@@ -116,6 +118,7 @@ angular.module('angleFunds')
 					$state.go('menu.patientList');
 				}, function(error) {
 					console.log('error', error);
+					$state.go('menu.patientList');
 				}); 
 				
 			}
