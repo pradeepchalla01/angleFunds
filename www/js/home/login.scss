@@ -41,7 +41,7 @@
 				}
 			}
 			.login-btn{
-				@include button(#337ab7, #fff, 40px, 15px);
+				@include button(#337ab7, #fff, 40px, 15px, 0);
 			}
 			.footer{
 				position: absolute;

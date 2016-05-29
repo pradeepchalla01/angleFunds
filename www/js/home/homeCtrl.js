@@ -1,6 +1,6 @@
 angular.module('angleFunds')
 
-.controller('homeCtrl', function($log, $ionicModal, $scope, $state) {
+.controller('homeCtrl', function($log, $ionicModal, $scope, $rootScope, $state) {
 	$log.debug('home controller entered');
 	$scope.loginData = {};
 	$scope.errors = {};
@@ -11,7 +11,7 @@ angular.module('angleFunds')
 		$scope.loginModal = modal;
 	});
 	$scope.openLoginModal = function(loginType) {
-		$scope.loginType = loginType;
+		$rootScope.loginType = loginType;
 		$scope.loginModal.show();
 	};
 	$scope.closeLoginModal = function(){
@@ -35,7 +35,11 @@ angular.module('angleFunds')
 		console.log('login function');
 		if(angular.equals({}, $scope.errors.login)) {
 			$scope.closeLoginModal();
-			$state.go('menu.patientList');
+			if($scope.loginType === 'hospital')
+				$state.go('menu.patientList');
+			else if($scope.loginType === 'org'){
+				$state.go('menu.fundPatients');
+			}
 		}
 	}
 	$scope.hideErrorMsg = function (id, key) {

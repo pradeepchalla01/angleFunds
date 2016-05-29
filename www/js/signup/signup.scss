@@ -17,7 +17,7 @@ ion-view{
 		padding: 5px;
 		.title{
 			color: #fff;
-			font-size: 20px;
+			font-size: 18px;
 			font-weight: normal;
 			text-transform: uppercase;
 		}
@@ -58,10 +58,10 @@ ion-view{
 						.button{
 							margin: 0;
 							&.registration-btn{
-								@include button(#5cb85c, #fff, 40px, 15px);
+								@include button(#5cb85c, #fff, 40px, 15px, 0);
 							}
 							&.reset-btn{
-								@include button(#337ab7, #fff, 40px, 15px);
+								@include button(#337ab7, #fff, 40px, 15px, 0);
 							}
 						}
 					}
