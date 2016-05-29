@@ -31,6 +31,14 @@ ion-view {
 			}
 			.save-patient-details {
 				text-align: center !important;
+				.button{
+					&.button-positive{
+						@include button(#337ab7, #fff, 40px, 15px, 0);
+					}
+					&.button-balanced{
+						@include button(#5cb85c, #fff, 40px, 15px, 0);
+					}
+				}
 			}
 
 		}

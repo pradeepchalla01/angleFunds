@@ -1,12 +1,21 @@
-@mixin button($bgcolor, $color, $height, $fontsize){
+@mixin button($bgcolor, $color, $height, $fontsize, $lineheight){
 	background: $bgcolor;
 	color: $color;
 	min-height: $height;
 	height: $height;
 	font-size: $fontsize;
-	line-height: 0;
+	line-height: $lineheight;
 }
-
+@mixin badge($color, $bgcolor, $padding, $width, $height, $radius, $fontsize, $line-height){
+	color: $color #fff;
+	background: $bgcolor red;
+	padding: $padding 0 5px;
+	min-width: 60px;
+	min-height: 22px;
+	border-radius: 3px;
+	font-size: 12px;
+	line-height: 18px;
+}
 ion-view{
 	&.home-container{
 		background-image: url("../img/app_logo.jpg");
@@ -26,17 +35,17 @@ ion-view{
 					bottom: 0;
 					width: 100%;
 					.hospital-btn{
-						@include button(rgba(0, 188, 228, 0.80), #fff, 40px, 15px);
+						@include button(rgba(0, 188, 228, 0.80), #fff, 40px, 15px, 0);
 					}
 					.charity-btn{
-						@include button(rgba(125, 63, 152, 0.8), #fff, 40px, 15px);
+						@include button(rgba(125, 63, 152, 0.8), #fff, 40px, 15px, 0);
 					}
 					.admin-btn{
-						@include button(rgba(222, 89, 78, 0.8), #fff, 40px, 15px);
+						@include button(rgba(222, 89, 78, 0.8), #fff, 40px, 15px, 0);
 
 					}
 					.signup-btn{
-						@include button(rgba(92, 184, 92, 0.8), #fff, 40px, 15px);
+						@include button(rgba(92, 184, 92, 0.8), #fff, 40px, 15px, 0);
 					}
 				}
 			}

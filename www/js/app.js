@@ -64,6 +64,25 @@ angular.module('angleFunds', ['ionic','onezone-datepicker'])
         controller: 'PatientListCtrl'
       }
     }
+  })
+  .state('menu.fundPatients',{
+    url: '/patientsSeekingFunds',
+    views: {
+      'menuContent': {
+        templateUrl: 'js/user/patients/fundPatients.partial.html',
+        controller: 'fundPatientsCtrl' 
+      }
+    }
+  })
+
+  .state('menu.approvedList',{
+    url: '/approvedPatientList',
+    views: {
+      'menuContent': {
+        templateUrl: 'js/user/patients/approvedPatients.partial.html',
+        controller: 'approvedPatientsCtrl' 
+      }
+    }
   });
   
   // Thanks to Ben Noblet!

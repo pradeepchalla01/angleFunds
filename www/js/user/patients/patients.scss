@@ -23,6 +23,17 @@ ion-view{
 								position: absolute;
 								right: 25px;
 							}
+							.button{
+								&.approved-badge{
+									@include button(#5cb85c, #fff, 22px, 12px, 18px);
+								}
+								&.acknowledge-badge{
+									@include button(#337ab7, #fff, 22px, 12px, 18px);	
+								}
+								&.pending-badge{
+									@include button(#d9534f, #fff, 22px, 12px, 18px);
+								}
+							}
 						}
 						.patient-details{
 							.row{
