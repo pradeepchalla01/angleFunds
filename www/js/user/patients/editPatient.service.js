@@ -11,14 +11,22 @@ angular
         };
         return service;
 
-        function updatePatientDetails() {
+        function updatePatientDetails(patientId) {
             $log.debug('****Inside editPatientService');
 
             return $http({
                 method: 'get',
                 url: 'js/user/patients/patientList.json',
             }).then(function(response) {
-                return response.data;
+                var result = response.data;
+                for(var i = 0; i < result.length; i++){
+                    if(result[i].patient_id == patientId){
+                    return result[i];
+                    }
+                }
+
+               /* console.log(response);
+                return response.data;*/
             });
         }
     }

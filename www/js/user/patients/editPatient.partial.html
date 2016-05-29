@@ -3,132 +3,119 @@
 <ion-header-bar class="bar-subheader signup-header">
     <h2 class="title">EDIT PATIENT</h2>
 </ion-header-bar>
-  <ion-content>
+    <ion-content>
     <div class="list newPatient-registration">
-  		<label class="item item-input item-floating-label">
-    		<span class="input-label">Name</span>
-    		<input type="text" ng-model="newPatient.patient_name" placeholder="Patient Name" ng-focus="hideErrorMsg('name','newPatient')">
-    		<span class="error-message"  ng-show="errors.newPatient.name">{{errors.newPatient.name}}</span>
-  		</label>
-      <!-- <span class="input-label date-of-birth">Date Of Birth</span>
-      <onezone-datepicker datepicker-object="newPatient.onezoneDatepicker" >
-            <button class="button button-block button-outline button-positive show-onezone-datepicker" g-model="newPatient.onezoneDatepicker">{{newPatient.onezoneDatepicker.date | date:'dd MMMM yyyy'}} 
+      <label id="madhu" class="item item-input item-floating-label">
+          <span id="name" class="input-label">Name</span>
+          <input type="text" ng-model="newPatient.patient_name" placeholder="Patient Name" ng-focus="hideErrorMsg('patient_name','newPatient')" ng-click="modifyParentClass()">
+          <span class="error-message"  ng-show="errors.newPatient.patient_name">{{errors.newPatient.patient_name}}</span>
+      </label>
+      <span class="input-label date-of-birth">Date Of Birth</span> 
+       <onezone-datepicker datepicker-object="newPatient.onezoneDatepicker" >
+            <button class="button button-block button-outline button-positive show-onezone-datepicker" ng-model="newPatient.date_of_birth">{{newPatient.date_of_birth }} 
             </button>
-      </onezone-datepicker> -->
-  		<label class="item item-input item-select">
-      		<div class = "input-label" style="height:45px;">Gender</div>
-	      		<select>
-         			<option value = "male">Male</option>
-         			<option value = "female">Female</option>
-      			</select>
-   		</label>
-   		<label class="item item-input item-floating-label">
-	    	<span class="input-label">Parent/Guardian Name</span>
-	    	<input type="text" ng-model="newPatient.parentName" placeholder="Parent/Guardian Name" ng-focus="hideErrorMsg('parentName','newPatient')">
-	    	<span class="error-message"  ng-show="errors.newPatient.parentName">{{errors.newPatient.parentName}}</span>
-	  	</label>
-	  	<label class="item item-input item-floating-label">
-	    	<span class="input-label">Primary Phone Number</span>
-	    	<input type="text" ng-model="newPatient.phone" placeholder="Primary Phone Number" ng-focus="hideErrorMsg('phone','newPatient')">
-	    	<span class="error-message"  ng-show="errors.newPatient.phone">{{errors.newPatient.phone}}</span>
-	  	</label>
-	  	<label class="item item-input item-floating-label">
-	    	<span class="input-label">Alternate phone Number</span>
-	    	<input type="text" ng-model="newPatient.alterPhone" placeholder="Alternate phone Number" ng-focus="hideErrorMsg('alterPhone','newPatient')">
-	    	<span class="error-message"  ng-show="errors.newPatient.alterPhone">{{errors.newPatient.alterPhone}}</span>
-	  	</label>
-   		<label class="item item-input item-floating-label">
-    		<span class="input-label">Email Address</span>
-    		<input type="text" ng-model="newPatient.email" placeholder="Email Address"  ng-focus="hideErrorMsg('email','newPatient')">
-	    	<span class="error-message"  ng-show="errors.newPatient.email">{{errors.newPatient.email}}</span>
-	    </label>
-  		<label class="item item-input item-floating-label">
-    		<span class="input-label">Doctor Name</span>
-    		<input type="text" ng-model="newPatient.doctorName" placeholder="Doctor Name"  ng-focus="hideErrorMsg('doctorName','newPatient')">
-	    	<span class="error-message"  ng-show="errors.newPatient.doctorName">{{errors.newPatient.doctorName}}</span>
-  		</label>
-  		<label class="item item-input item-stacked-label">
-  		   	<span class="input-label">Select a file : 		 
-  		   		<input type="file" name="img" ng-model="newPatient.file" ></span>
-  		</label>
-  		<label class="item item-input item-floating-label">
-    		<span class="input-label">Diagnosis</span>
-    		<input type="text" ng-model="newPatient.diagnosis" placeholder="Diagnosis"  ng-focus="hideErrorMsg('diagnosis','newPatient')">
-	    	<span class="error-message"  ng-show="errors.newPatient.diagnosis">{{errors.newPatient.diagnosis}}</span>
-  		</label>
-  		<label class="item item-input item-floating-label">
-    		<span class="input-label">Stage (if Applicable)</span>
-    		<input type="text" placeholder="Stage" ng-model="newPatient.stage">
-  		</label> 
-    	<label class="item item-input item-floating-label">
-    		<span class="input-label">Disease</span>
-    		<input type="text" ng-model="newPatient.disease" placeholder="Disease" ng-focus="hideErrorMsg('disease','newPatient')">
-	    	<span class="error-message"  ng-show="errors.newPatient.disease">{{errors.newPatient.disease}}</span>
-  		</label>
-  		<label class="item item-input item-floating-label">
-    		<span class="input-label">Duration of treatment</span>
-    		<input type="text" ng-model="newPatient.duration" placeholder="Duration of treatment" ng-focus ="hideErrorMsg('duration','newPatient')">
-	    	<span class="error-message"  ng-show="errors.newPatient.duration">{{errors.newPatient.duration}}</span>
-  		</label>
-  		<label class="item item-input item-floating-label">
-    		<span class="input-label">Type of Treatment</span>
-    		<input type="text" ng-model="newPatient.typeOfTreatment" placeholder="Type of Treatment" ng-focus ="hideErrorMsg('typeOfTreatment','newPatient')">
-	    	<span class="error-message"  ng-show="errors.newPatient.typeOfTreatment">{{errors.newPatient.typeOfTreatment}}</span>
-  		</label>
-  		<label class="item item-input item-floating-label">
-    		<span class="input-label">Approximate Cost</span>
-    		<input type="text" ng-model="newPatient.appCost" placeholder="Approximate Cost" ng-focus ="hideErrorMsg('appCost','newPatient')">
-	    	<span class="error-message"  ng-show="errors.newPatient.appCost">{{errors.newPatient.appCost}}</span>
-  		</label>
-  		<label class="item item-input item-floating-label">
-    		<span class="input-label">Monthly Family Income</span>
-    		<input type="text" ng-model="newPatient.familyIncome" placeholder="Monthly Family Income" ng-focus ="hideErrorMsg('familyIncome','newPatient')">
-	    	<span class="error-message"  ng-show="errors.newPatient.familyIncome">{{errors.newPatient.familyIncome}}</span>
-  		</label>
+      </onezone-datepicker> 
+      <label class="item item-input item-select">
+          <div class = "input-label" style="height:45px;">Gender</div>
+            <select>
+              <option value = "male">Male</option>
+              <option value = "female">Female</option>
+            </select>
+      </label>
+      <label class="item item-input item-floating-label">
+          <span class="input-label">Parent/Guardian Name</span>
+          <input type="text" ng-model="newPatient.parent_guardian_name" placeholder="Parent/Guardian Name" ng-focus="hideErrorMsg('parent_guardian_name','newPatient')">
+          <span class="error-message"  ng-show="errors.newPatient.parent_guardian_name">{{errors.newPatient.parent_guardian_name }}</span>
+      </label>
+      <label class="item item-input item-floating-label">
+          <span class="input-label">Primary Phone Number</span>
+          <input type="text" ng-model="newPatient.primary_phone_number" placeholder="Primary Phone Number" ng-focus="hideErrorMsg('primary_phone_number','newPatient')">
+          <span class="error-message"  ng-show="errors.newPatient.primary_phone_number">{{errors.newPatient.primary_phone_number}}</span>
+      </label>
+      <label class="item item-input item-floating-label">
+          <span class="input-label">Alternate phone Number</span>
+          <input type="text" ng-model="newPatient.alternate_phone_number" placeholder="Alternate phone Number" ng-focus="hideErrorMsg('alternate_phone_number','newPatient')">
+          <span class="error-message"  ng-show="errors.newPatient.alternate_phone_number">{{errors.newPatient.alternate_phone_number}}</span>
+      </label>
+      <label class="item item-input item-floating-label">
+          <span class="input-label">Email Address</span>
+          <input type="text" ng-model="newPatient.patient_email" placeholder="Email Address"  ng-focus="hideErrorMsg('patient_email','newPatient')">
+          <span class="error-message"  ng-show="errors.newPatient.patient_email">{{errors.newPatient.patient_email}}</span>
+      </label>
+      <label class="item item-input item-floating-label">
+          <span class="input-label">Doctor Name</span>
+          <input type="text" ng-model="newPatient.doctor_name" placeholder="Doctor Name"  ng-focus="hideErrorMsg('doctor_name','newPatient')">
+          <span class="error-message"  ng-show="errors.newPatient.doctor_name">{{errors.newPatient.doctor_name}}</span>
+      </label>
+      <label class="item item-input item-stacked-label">
+          <span class="input-label">Select a file :      
+          <input type="file" name="img" ng-model="newPatient.file" ></span>
+      </label>
+      <label class="item item-input item-floating-label">
+          <span class="input-label">Diagnosis</span>
+          <input type="text" ng-model="newPatient.diagnosis" placeholder="Diagnosis"  ng-focus="hideErrorMsg('diagnosis','newPatient')">
+          <span class="error-message"  ng-show="errors.newPatient.diagnosis">{{errors.newPatient.diagnosis}}</span>
+      </label>
+      <label class="item item-input item-floating-label">
+          <span class="input-label">Stage (if Applicable)</span>
+          <input type="text" placeholder="Stage" ng-model="newPatient.stage">
+      </label> 
+      <label class="item item-input item-floating-label">
+          <span class="input-label">Disease</span>
+          <input type="text" ng-model="newPatient.disease_name" placeholder="Disease" ng-focus="hideErrorMsg('disease_name','newPatient')">
+          <span class="error-message"  ng-show="errors.newPatient.disease_name">{{errors.newPatient.disease_name}}</span>
+      </label>
+      <label class="item item-input item-floating-label">
+          <span class="input-label">Duration of treatment</span>
+          <input type="text" ng-model="newPatient.duration_of_treatment" placeholder="Duration of treatment" ng-focus ="hideErrorMsg('duration_of_treatment','newPatient')">
+          <span class="error-message"  ng-show="errors.newPatient.duration_of_treatment">{{errors.newPatient.duration_of_treatment}}</span>
+      </label>
+      <label class="item item-input item-floating-label">
+          <span class="input-label">Type of Treatment</span>
+          <input type="text" ng-model="newPatient.duration_type" placeholder="Type of Treatment" ng-focus ="hideErrorMsg('duration_type','newPatient')">
+          <span class="error-message"  ng-show="errors.newPatient.duration_type">{{errors.newPatient.duration_type}}</span>
+      </label>
+      <label class="item item-input item-floating-label">
+          <span class="input-label">Approximate Cost</span>
+          <input type="text" ng-model="newPatient.approximate_cost" placeholder="Approximate Cost" ng-focus ="hideErrorMsg('approximate_cost','newPatient')">
+          <span class="error-message"  ng-show="errors.newPatient.approximate_cost">{{errors.newPatient.approximate_cost}}</span>
+      </label>
+      <label class="item item-input item-floating-label">
+          <span class="input-label">Monthly Family Income</span>
+          <input type="text" ng-model="newPatient.monthly_family_income" placeholder="Monthly Family Income" ng-focus ="hideErrorMsg('monthly_family_income','newPatient')">
+          <span class="error-message"  ng-show="errors.newPatient.monthly_family_income">{{errors.newPatient.monthly_family_income}}</span>
+      </label>
 
-  		<div style="color: #444; display: table; padding: 10px; font-size: 20px;">Job holders in family</div>
-		<div class="row">
-  			<div class="name-occupation col col-50">
-  				<span class="input-label">Name</span>
-  				<label class="item item-input">
-  					<input type="text" ng-model = "newPatient.personName" placeholder="Name" ng-focus ="hideErrorMsg('personName','newPatient')">
-  				</label>
-  				<label class="item item-input">
-  					<input type="text" placeholder="Name">
-  				</label>
-  				<label class="item item-input">
-  					<input type="text" placeholder="Name">
-  				</label>
-          <span class="error-message"  ng-show="errors.newPatient.personName">{{errors.newPatient.personName}}</span>
-  			</div>
-  			<div class="name-occupation col col-50">
-  				<span class="input-label">Occupation</span>
-  				<label class="item item-input">
-  					<input type="text" ng-model = "newPatient.occupation" placeholder="Occupation" ng-focus ="hideErrorMsg('occupation','newPatient')">
-  				</label>
-  				<label class="item item-input">
-  					<input type="text" placeholder="Occupation">
-  				</label>
-  				<label class="item item-input">
-  					<input type="text" placeholder="Occupation">
-  				</label>
-          <span class="error-message"  ng-show="errors.newPatient.occupation">{{errors.newPatient.occupation}}</span>
-  			</div>
-		</div>
-      	<ul ng-repeat="organization in organizations">
-	        <li class="item item-checkbox">
-	           <label class="checkbox"><input type="checkbox" ng-checked="selection.indexOf(organization) > -1" ng-click="toggleSelection(organization)" value="{{organization}}" ng-focus ="hideErrorMsg('organization','newPatient')"></label>{{ organization}}
-	        </li>
-	     </ul>
-      <span class="error-message"  ng-show="errors.newPatient.organization">{{errors.newPatient.organization}}</span>
-	    <div class="col btnGroup save-patient-details">
-        	<button class="button button-balanced" ng-click="savePatientDetails()">Register</button>
-			    <button class="button button-positive" ng-click="reset()">Reset</button>
+      <div style="color: #444; display: table; padding: 10px; font-size: 20px;">Job holders in family</div>
+      <div class="row">
+          <div class="name-occupation col col-50">
+            <span class="input-label">Name</span>
+            <label class="item item-input" ng-repeat = "family in newPatient.jobholders_in_family">
+                <input type="text" ng-model = "family.job_holder_name" placeholder="Name" ng-focus ="hideErrorMsg('job_holder_name','newPatient')">
+            </label>
+            <span class="error-message"  ng-show="errors.newPatient.job_hoder_occupation">{{errors.newPatient.job_hoder_occupation}}</span>
+          </div>
+          <div class="name-occupation col col-50">
+            <span class="input-label">Occupation</span>
+              <label class="item item-input" ng-repeat = "family in newPatient.jobholders_in_family">
+                <input type="text" ng-model = "family.job_hoder_occupation" placeholder="Occupation" ng-focus ="hideErrorMsg('job_hoder_occupation','newPatient')">
+              </label>
+              <span class="error-message"  ng-show="errors.newPatient.job_hoder_occupation">{{errors.newPatient.job_hoder_occupation}}</span>
+          </div>
       </div>
-
-      
-	</div>
+      <ul ng-repeat="organization in newPatient.organizations">
+        <li class="item item-checkbox">
+           <label class="checkbox"><input type="checkbox" ng-checked="selection.indexOf(organization) > -1" ng-click="toggleSelection(organization)" value="{{organization}}" ng-focus ="hideErrorMsg('organization','newPatient')"></label>{{ organization}}
+        </li>
+      </ul>
+      <span class="error-message"  ng-show="errors.newPatient.organization">{{errors.newPatient.organization}}</span>
+      <div class="col btnGroup save-patient-details">
+          <button class="button button-balanced" ng-click="savePatientDetails()">Register</button>
+          <button class="button button-positive" ng-click="reset()">Reset</button>
+      </div>
+    </div> 
+    <div ng-if="loading" style="margin-left: auto; margin-right: auto; margin-top: 100px;text-align: center;">
+      <img src="img/loading.gif">
+    </div>
   </ion-content>
-</ion-view>
-
 </ion-view>
