@@ -30,6 +30,10 @@ angular.module('angleFunds')
 		var id = patientId; 	
 		$state.go('editOrgPatient', { id: id});
 	}
+
+	$scope.status = function(filter){
+		$scope.statusFilter = filter;
+	}
 })
 
 .controller('approvedPatientsCtrl', function($scope, patientFactory){

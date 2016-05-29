@@ -8,6 +8,14 @@ ion-view{
 		.scroll{
 			.patientList{
 				.item-input-inset{
+					.item-input-wrapper{
+						padding-right: 0;
+						.icon{
+							&.ion-close-circled{
+								padding: 5px;
+							}
+						}
+					}
 					.item-select{
 						width: 40%;
 						padding: 14px 0;
@@ -39,6 +47,22 @@ ion-view{
 				ion-list{
 					ion-item{
 						padding: 0 16px;
+						&.charity-list{
+							padding: 0 10px;
+							.patientDiv{
+								.icon{
+									&.ion-checkmark-circled{
+										color: #449d44;
+									}
+									&.ion-information-circled{
+										color: #286090;
+									}
+									&.ion-help-circled{
+										color: #c9302c;
+									}
+								}
+							}
+						}
 						line-height: 50px;
 						.patientDiv{
 							text-align: left;
