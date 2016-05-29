@@ -14,8 +14,9 @@
 				    </div>
 				    <select class="selectFilter" ng-model="filter" ng-change="status(filter)">
 				      <option selected value="">All</option>
-				      <option value="accepted">Accepted</option>
-				      <option value="rejected">Rejected</option>
+				      <option value="Approved">Approved</option>
+				      <option value="Acknowledged">Acknowledge</option>
+				      <option value="Pending">Pending</option>
 				    </select>
 			  	</label>
 			</div>
@@ -26,7 +27,8 @@
 			</div>
 	      	<ion-list>
 		    	<ion-item ng-repeat="patient in patientList | filter:searchText | filter:statusFilter" class="item-remove-animate">
-		          	<div class="patientDiv row">
+	          		<div class="patientDiv row">
+		          		<i class="icon" ng-show="patient.status" ng-class="patient.status === 'Approved' ? 'ion-checkmark-circled' : patient.status === 'Acknowledged' ? 'ion-information-circled' :  'ion-help-circled'" title="patient.status" ng-click="openPopover()"></i> &nbsp;&nbsp;
 		          		<span class="patientItem col">{{patient.patient_name}}</span>
 		          		<span class="patientItem col">{{patient.doctor_name}}</span>
 		          		<span class="patientItem editIocn col col-10" ng-click="editPatient(patient.patient_id)"><i class="ion-ios-compose-outline"></i></span>
