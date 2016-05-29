@@ -1,5 +1,9 @@
 ion-view{
 	.bar-header{
+		.backButton:before{
+			font-size: 25px !important;
+			line-height: 29px !important;
+		}
 		h2{
 			img{
 				height:100%;

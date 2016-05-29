@@ -9,7 +9,11 @@ angular.module('angleFunds')
 		$scope.patientList = result;
 	});
 	$scope.editPatient = function(patientId){
+		console.log(patientId);
 		var id = patientId; 	
 		$state.go('editPatient', { id: id});
+	}
+	$scope.status = function(filter){
+		$scope.statusFilter = filter;
 	}
 });

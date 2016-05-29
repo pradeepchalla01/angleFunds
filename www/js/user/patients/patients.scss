@@ -7,29 +7,50 @@ ion-view{
 	ion-content{
 		.scroll{
 			.patientList{
-				.buttons{
-					text-align: right;
-					.editButton{
-						line-height: 30px;
-						margin: 5px;
-						min-height: 35px;
+				.item-input-inset{
+					.item-select{
+						width: 40%;
+						padding: 14px 0;
+						margin-left: 10px;
+						border: 0 none;
+						background-color: transparent;
+						.input-label{
+							width: 0;
+							padding: 0;
+						}
+						.selectFilter{
+							position: static;	
+							padding: 0 0 0 16px;
+						}
 					}
 				}
+				.listHeader{
+					padding: 0 11px;
+					font-weight: 600;
+					background: #E4E0E0;
+					.header.pdr0{
+						padding-right: 0;
+					}
+					.header.pdl0{
+						padding-left: 0;
+					}
+				}
+
 				ion-list{
 					ion-item{
+						padding: 0 16px;
+						line-height: 50px;
 						.patientDiv{
 							text-align: left;
-							.arrowIcon{
-								position: absolute;
-								right: 25px;
+							padding: 0;
+							.patientItem{
+								padding: 0;
+								max-width: 129px;
+								word-wrap: break-word;
 							}
-						}
-						.patient-details{
-							.row{
-								font-size: 15px;
-								.col-60{
-									font-weight: 600;
-								}
+							.patientItem.editIocn{
+								font-size: 30px;
+								max-width: 30px;
 							}
 						}
 					}
