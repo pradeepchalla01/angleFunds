@@ -5,18 +5,18 @@
     <ion-content>
 	    <div class="patientList">
 	    	<div class="bar bar-header item-input-inset">
-			  	<label class="item-input-wrapper">
+			  	<div class="item-input-wrapper">
 			    	<i class="icon ion-ios-search placeholder-icon"></i>
 			    	<input type="search" placeholder="Search" ng-model="searchText">
-			  	</label>
+			    	<i class="icon ion-close-circled" ng-show="searchText.length" ng-click="searchText = ''"></i>
+			  	</div>
 			  	<label class="item item-input item-select">
 				    <div class="input-label">
 				    </div>
-				    <select class="selectFilter" ng-model="filter" ng-change="status(filter)">
+				    <select class="selectFilter" ng-model="filter" ng-change="status(filter);searchText = ''">
 				      <option selected value="">All</option>
-				      <option value="Approved">Approved</option>
-				      <option value="Acknowledged">Acknowledge</option>
-				      <option value="Pending">Pending</option>
+				      <option value="accepted">accepted</option>
+				      <option value="rejected">rejected</option>
 				    </select>
 			  	</label>
 			</div>
@@ -28,11 +28,14 @@
 	      	<ion-list>
 		    	<ion-item ng-repeat="patient in patientList | filter:searchText | filter:statusFilter" class="item-remove-animate">
 	          		<div class="patientDiv row">
-		          		<i class="icon" ng-show="patient.status" ng-class="patient.status === 'Approved' ? 'ion-checkmark-circled' : patient.status === 'Acknowledged' ? 'ion-information-circled' :  'ion-help-circled'" title="patient.status" ng-click="openPopover()"></i> &nbsp;&nbsp;
+		          		<i class="icon" ng-show="patient.status" ng-class="patient.appliction_status === 'accepted' ? 'ion-checkmark-circled' : 'ion-close-circled'" ng-click="openPopover()"></i> &nbsp;&nbsp;
 		          		<span class="patientItem col">{{patient.patient_name}}</span>
 		          		<span class="patientItem col">{{patient.doctor_name}}</span>
 		          		<span class="patientItem editIocn col col-10" ng-click="editPatient(patient.patient_id)"><i class="ion-ios-compose-outline"></i></span>
 		        	</div>
+		        </ion-item>
+		        <ion-item  ng-show="(patientList | filter:searchText | filter:statusFilter).length == 0">
+		        	<p class="text-center">No Patients Found.</p>
 		        </ion-item>
 	      	</ion-list>
 	    </div>
