@@ -1,6 +1,6 @@
 angular.module('angleFunds')
 
-.controller('signupCtrl', function($log, $scope, $state) {
+.controller('signupCtrl', function($log, $scope, $state, AuthService) {
 	$log.debug('signup controller entered');
 	$scope.errors = {};
 	$scope.signup = {};
@@ -31,6 +31,7 @@ angular.module('angleFunds')
 			$scope.errors.signup.confirmPassword = 'Please Confirm your Passowrd';
 		}
 		if(angular.equals({}, $scope.errors.signup)) {
+			AuthService.signup($scope.signup);
 			$state.go('login');
 		}
 	}

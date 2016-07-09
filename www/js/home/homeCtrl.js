@@ -1,6 +1,6 @@
 angular.module('angleFunds')
 
-.controller('homeCtrl', function($log, $ionicModal, $scope, $rootScope, $state) {
+.controller('homeCtrl', function($log, $ionicModal, $scope, $rootScope, $state, AuthService) {
 	$log.debug('home controller entered');
 	$scope.loginData = {};
 	$scope.errors = {};
@@ -34,6 +34,7 @@ angular.module('angleFunds')
 		}
 		console.log('login function');
 		if(angular.equals({}, $scope.errors.login)) {
+			AuthService.login($scope.loginData);
 			$scope.closeLoginModal();
 			if($scope.loginType === 'hospital')
 				$state.go('menu.patientList');
