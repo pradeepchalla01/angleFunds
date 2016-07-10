@@ -3,7 +3,7 @@ angular.module('angleFunds')
     .constant('CONSTANTS', {
 
     //API_URL
-    API_URL: "http:localhost:8100",
+    API_URL: "http://localhost:8100/anglefunds/index.php/service",
 
     // Messages
     SERVER_ERROR_MESSAGE: "Oops, something went wrong. Our engineers have been notified & should" +

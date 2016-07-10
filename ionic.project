@@ -8,5 +8,11 @@
   "watchPatterns": [
     "www/**/*",
     "!www/lib/**/*"
+  ],
+  "proxies": [
+    {
+      "path": "/anglefunds",
+      "proxyUrl": "http://nmrangelfunds.org/test"
+    }
   ]
 }

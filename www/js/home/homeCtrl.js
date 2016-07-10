@@ -26,21 +26,30 @@ angular.module('angleFunds')
 	$scope.login = function(){
 		$log.debug('home controller entered');		
 		$scope.errors.login = {};
-		if(!$scope.loginData.userName){
-			$scope.errors.login.userName = 'Please Enter user Name or Email';
+		if(!$scope.loginData.username){
+			$scope.errors.login.username = 'Please Enter user Name or Email';
 		}
 		if(!$scope.loginData.password){
 			$scope.errors.login.password = 'Please Enter Password';
 		}
 		console.log('login function');
 		if(angular.equals({}, $scope.errors.login)) {
-			AuthService.login($scope.loginData);
-			$scope.closeLoginModal();
-			if($scope.loginType === 'hospital')
-				$state.go('menu.patientList');
-			else if($scope.loginType === 'org'){
-				$state.go('menu.fundPatients');
-			}
+			$scope.loginData.type = $scope.loginType;
+			//AuthService.login($scope.loginData).then(function(result){
+				//console.log(result);
+				//if(result.status === 1){
+					$scope.closeLoginModal();
+					if($scope.loginType === 'hospital'){
+						$state.go('menu.patientList');
+					}
+					else if($scope.loginType === 'org'){
+						$state.go('menu.fundPatients');
+					}	
+				//} else {
+				//	$scope.errors.login.password = result.message[1];
+				//}
+			//});
+			
 		}
 	}
 	$scope.hideErrorMsg = function (id, key) {

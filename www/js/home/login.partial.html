@@ -5,11 +5,11 @@
         	<p class="LoginHeader" ng-bind-html="loginType === 'hospital' ? 'Hospital' : loginType === 'org' ? 'Charity Organization' : 'Admin'"></p>
         </div>
             <div class="list FormDiv">
-                <label class="item item-input item-floating-label"  ng-class="{'has-error' : errors.login.userName}">
+                <label class="item item-input item-floating-label"  ng-class="{'has-error' : errors.login.username}">
                     <span class="input-label">User Name</span>
-                    <input type="text" name="username"  placeholder="Patient Name" ng-model="loginData.userName" ng-focus="hideErrorMsg('userName','login')">
+                    <input type="text" name="username"  placeholder="Patient Name" ng-model="loginData.username" ng-focus="hideErrorMsg('username','login')">
                 </label>
-                <div class="error-text text-center" ng-show="errors.login.userName">{{errors.login.userName}}</div>
+                <div class="error-text text-center" ng-show="errors.login.username">{{errors.login.username}}</div>
                 <label class="item item-input item-floating-label" ng-class="{'has-error' : errors.login.password}">
                     <span class="input-label">Password</span>
                     <input type="text" type="password" name="Password" placeholder="Password" ng-model="loginData.password" ng-focus="hideErrorMsg('password','login')">

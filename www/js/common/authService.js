@@ -13,12 +13,11 @@ angular.module('angleFunds')
             });
         },
         login: function(data) {
-          var method = 'POST';
-            var url = '/auth/login';
-            QueryService.query(method, url, null, data).then(function(result){
-                console.log(result);
-                return result;
-            });  
+            var method = 'POST';
+            var url = '/login';
+            return QueryService.query(method, url, null, data).then(function(result){
+                return result.data;
+            });
         }
     };
 
