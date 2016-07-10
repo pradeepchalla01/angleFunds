@@ -46,6 +46,13 @@ angular.module('angleFunds', ['ionic','onezone-datepicker'])
     templateUrl: 'js/user/patients/editPatient.partial.html',
     controller: 'editPatientCtrl'
   })
+
+  .state('editOrgPatient', {
+    url: '/editOrgPatient/:id',
+    templateUrl: 'js/user/patients/editPatientInformation.partial.html',
+    controller: 'editOrgPatinetInfoCtrl'
+  })
+
   .state('menu.newPatient', {
     url: '/newPatient',
     views: {

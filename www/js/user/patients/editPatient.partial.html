@@ -1,12 +1,15 @@
 <ion-view>
-<a class="button icon-left ion-chevron-left button-clear button-dark" ng-click="goPatientList()">Back</a>
+    <ion-header-bar>
+        <a class="backButton button icon-left ion-chevron-left button-clear button-dark" ng-click="goPatientList()">Back</a>
+        <h2 class="title"><img src="img/Angelfundslogo_new.jpg"></h2>
+    </ion-header-bar>
 <ion-header-bar class="bar-subheader signup-header">
     <h2 class="title">EDIT PATIENT</h2>
 </ion-header-bar>
     <ion-content>
     <div class="list newPatient-registration">
       <label id="madhu" class="item item-input item-floating-label">
-          <span id="name" class="input-label">Name</span>
+          <span id="name" class="input-label">Patient Name</span>
           <input type="text" ng-model="newPatient.patient_name" placeholder="Patient Name" ng-focus="hideErrorMsg('patient_name','newPatient')" ng-click="modifyParentClass()">
           <span class="error-message"  ng-show="errors.newPatient.patient_name">{{errors.newPatient.patient_name}}</span>
       </label>

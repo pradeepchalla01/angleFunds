@@ -30,6 +30,12 @@ ion-view{
 							position: static;	
 							padding: 0 0 0 16px;
 						}
+						select{
+							.item-select:after{
+								right: 22px;
+								margin-top: -1px;
+							}
+						}
 					}
 				}
 				.listHeader{

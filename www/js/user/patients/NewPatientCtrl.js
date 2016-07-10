@@ -1,6 +1,6 @@
 angular.module('angleFunds')
 
-.controller('NewPatientCtrl', function($log, $scope, $state, newPatientService) {
+.controller('NewPatientCtrl', function($log, $scope, $state, newPatientService, CONSTANTS) {
 	$scope.newPatient = {};
 	$scope.errors = {};
 	$scope.organizations = ['organization 1', 'organization 2', 'organization3'];
@@ -25,7 +25,23 @@ angular.module('angleFunds')
 	$scope.savePatientDetails = function(){
 		$scope.errors.newPatient= {};
 		$scope.newPatient.organization = $scope.organization;
-			if(!$scope.newPatient.patient_name){
+		var required = ['patient_name', 'onezoneDatepicker', 'parent_guardian_name', 'primary_phone_number', 'patient_email', 'doctor_name', 'diagnosis', 'disease_name', 'duration_of_treatment', 'duration_type', 'approximate_cost','monthly_family_income', 'occupation', 'personName',];
+		angular.forEach(required, function(attr){
+			if(!$scope.newPatient[attr]){
+				$scope.errors.newPatient[attr] = 'This field is required';
+			}
+		});
+		if($scope.newPatient.primary_phone_number && !CONSTANTS.PHONE_REGEX.test($scope.newPatient.primary_phone_number)){
+			$scope.errors.newPatient.primary_phone_number = 'Please enter valid phone number';
+		}
+		if($scope.newPatient.alternate_phone_number && !CONSTANTS.PHONE_REGEX.test($scope.newPatient.alternate_phone_number)){
+			$scope.errors.newPatient.alternate_phone_number = 'Please enter valid phone number';
+		}
+		if($scope.newPatient.patient_email && !CONSTANTS.EMAIL_REGEX.test($scope.newPatient.patient_email)){
+			$scope.newPatient.patient_email = 'Please enter valid phone number';
+		}
+
+			/*if(!$scope.newPatient.patient_name){
 				$scope.errors.newPatient.patient_name = 'please enter patient name';
 				return false;
 			} 
@@ -105,7 +121,7 @@ angular.module('angleFunds')
 			}
 			if(!$scope.newPatient.personName){
 				$scope.errors.newPatient.personName = "please enter atleast one personName";
-			}
+			}*/
 			if($scope.organization.length > 0){
 				$scope.errors.newPatient.organization = "please select atleast one organization";
 			}
