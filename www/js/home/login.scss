@@ -1,7 +1,7 @@
 .login-container{
 	.login-content{
 		&.hospital-login{
-		    background: rgba(0, 188, 228, 0.44) none repeat scroll 0 0;
+		    background: #FFED00 none repeat scroll 0 0;
 		}
 		&.charity-login{
 			background: rgba(193, 117, 170, 0.44) none repeat scroll 0 0;
@@ -10,9 +10,16 @@
 			background-color: #F9B1AB;
 		}	
 		.scroll{
+		    .input-label {
+		    	color: #336699;
+		    }
 		    padding: 0 20px 20px;
+		    .ion-android-add-circle {
+					color: #336699;
+				}
 			.iconDiv{
 				padding: 15px 0;
+				
 				.icon{
 					color: #7D3F98;
 					font-size: 90px;
