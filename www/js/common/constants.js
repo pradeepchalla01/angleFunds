@@ -4,6 +4,10 @@ angular.module('angleFunds')
 
     //API_URL
     API_URL: "http://localhost:8100/anglefunds/index.php/service",
+    METHOD_POST: "POST",
+    METHOD_GET: "GET",
+    METHOD_PUT: "PUT",
+    METHOD_DELETE: "DELETE",
 
     // Messages
     SERVER_ERROR_MESSAGE: "Oops, something went wrong. Our engineers have been notified & should" +

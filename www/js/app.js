@@ -3,9 +3,9 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('angleFunds', ['ionic','onezone-datepicker'])
+angular.module('angleFunds', ['ionic','onezone-datepicker', 'angular-storage'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, $rootScope, store, $state, AuthService, $ionicLoading) {
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -21,8 +21,27 @@ angular.module('angleFunds', ['ionic','onezone-datepicker'])
       StatusBar.styleDefault();
     }
   });
+  
+  // Please look into this as it is showing maximum call stack size exceeded in console
+  // Kick off user to home page if user data not exist
+  /*$rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
+    var user = AuthService.getCurrentUser();
+    console.log(user);
+    if(!user && (toState.name !== "signup")){
+      event.preventDefault();
+      $state.go('home');
+    }
+  });*/
+  $rootScope.$on('showLoader', function(){
+      $ionicLoading.show();
+  });
+  $rootScope.$on('hideLoader', function(){
+      $ionicLoading.hide();
+  });
 })
-.config(function ($stateProvider, $urlRouterProvider) {
+.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $provide) {
+
+  $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
   $stateProvider
   .state('home', {
     url: '/home',
@@ -92,9 +111,35 @@ angular.module('angleFunds', ['ionic','onezone-datepicker'])
     }
   });
   
-  // Thanks to Ben Noblet!
+
+  $provide.factory('httpInterceptor', function($log, store, $rootScope, $q) {
+          var numOfReqs = 0;
+            return {
+                'request': function(config) {
+                    if(store){
+                      config.headers['X-Auth-Token'] = store.get('token') || undefined;
+                    }
+                    $rootScope.$broadcast('showLoader');
+                  return config;
+                },
+                'requestError': function(config) {
+                  $rootScope.$broadcast('hideLoader');
+                },
+                'response': function(response){
+                  $rootScope.$broadcast('hideLoader');
+                  return response;
+                },
+                'responseError': function(rejection) {
+                  $rootScope.$broadcast('hideLoader');
+                }
+            };
+        });
+        $httpProvider.interceptors.push('httpInterceptor');
+
+
   $urlRouterProvider.otherwise(function ($injector, $location) {
     var $state = $injector.get("$state");
     $state.go("home");
   });
+  
 });

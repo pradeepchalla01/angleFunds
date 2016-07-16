@@ -1,12 +1,20 @@
 angular.module('angleFunds')
 
-.controller('PatientListCtrl', function($log, $scope,$location, $state, patientFactory ) {
+.controller('PatientListCtrl', function($log, $scope,$location, $state, $rootScope, PatientService, store, commonService) {
 	$log.debug('PatientList controller entered');
 	$scope.isExpand = false;
 	$scope.data = {};	
 	$scope.patientList = [];
-	patientFactory.getPatientList().then(function(result){
+	$scope.userData = store.get('currentUser');
+	PatientService.getPatientDetails($scope.userData.hospital_id).then(function(result){
 		$scope.patientList = result;
+	});
+
+	// api service for master data
+	// calling the service for reference
+	// remove when known appropriate controller to call from
+	commonService.getMasterData(store.get('accountType')).then(function(result){
+		console.log(result);
 	});
 	$scope.editPatient = function(patientId){
 		var id = patientId; 	

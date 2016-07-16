@@ -2,15 +2,17 @@ angular
         .module('angleFunds')
         .factory('newPatientService', newPatientService);
 
-    function newPatientService($log, $http) {
+    function newPatientService($log, $http, QueryService, CONSTANTS) {
         var service = {
-            setAddNewPatientDetails: setAddNewPatientDetails
+            setAddNewPatientDetails: setAddNewPatientDetails,
+            getPatientDetails: getPatientDetails
         };
         return service;
 
+
         function setAddNewPatientDetails(patientDetails) {
             return $http({
-                method: 'get',
+                method: 'GET',
                 url: 'AngelFunds/PatientRegistration',
                 data: patientDetails
             }).then(function(response) {
@@ -18,14 +20,6 @@ angular
             });
         }
 
-        function getPatientDetails(patient){
-               return $http({
-                method: 'get',
-                url: 'AngelFunds/PatientRegistration',
-                data: patientDetails
-            }).then(function(response) {
-                return response.data;
-            });
-        }
+        
 
     }
