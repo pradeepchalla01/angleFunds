@@ -36,14 +36,9 @@ angular.module('angleFunds')
 })
 
 .controller('approvedPatientsCtrl', function($scope, patientFactory){
+	$scope.approvedList = [];
 	patientFactory.getPatientList().then(function(result){
-		console.log(result);
-		$scope.approvedList = [];
-		angular.forEach(result, function(patient){
-			if(patient.status === 'Approved'){
-				$scope.approvedList.push(patient);
-			}
-		})
+		$scope.approvedList = result;
 	});
 })
 .controller('editOrgPatinetInfoCtrl', function($scope, patientFactory, CONSTANTS){
@@ -82,7 +77,6 @@ angular.module('angleFunds')
 				console.log('error', error);
 				$state.go('menu.patientList');
 			}); 
-			
 		}
 	}
 });

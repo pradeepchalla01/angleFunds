@@ -1,23 +1,21 @@
 angular.module('angleFunds')
 
-.controller('signupCtrl', function($log, $scope, $state, AuthService, $ionicModal, $rootScope) {
+.controller('signupCtrl', function($log, $scope, $state, AuthService, $ionicModal, $rootScope, CONSTANTS) {
 	$log.debug('signup controller entered');
 	$scope.errors = {};
 	$scope.signup = {};
 	$scope.register = function(){
 		$scope.errors.signup = {};
-		var emailRegex = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
-		var phoneRegex = /^[2-9]\d{2}[2-9]\d{2}\d{4}$/;
 		var required = ['contactName', 'hospitalName', 'address', 'phone', 'email', 'userName', 'password', 'confirmPassword'];
 		angular.forEach(required, function(attr){
 			if(!$scope.signup[attr]){
 				$scope.errors.signup[attr] = 'This field is required';
 			}
 		});
-		if($scope.signup.phone && !phoneRegex.test($scope.signup.phone)){
+		if($scope.signup.phone && !CONSTANTS.PHONE_REGEX.test($scope.signup.phone)){
 			$scope.errors.signup.phone = 'Please enter valid Phone Number'
 		}
-		if($scope.signup.email && !emailRegex.test($scope.signup.email)){
+		if($scope.signup.email && !CONSTANTS.EMAIL_REGEX.test($scope.signup.email)){
 			$scope.errors.signup.email = 'Please enter valid Contact Email'
 		}
 		if($scope.signup.password && $scope.signup.confirmPassword && $scope.signup.password != $scope.signup.confirmPassword){
