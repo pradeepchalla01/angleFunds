@@ -16,7 +16,8 @@ angular
 
             return $http({
                 method: 'get',
-                url: 'js/user/patients/patientList.json',
+                url: 'js/user/patients/patientSummary.json',
+                /*url: 'http://localhost/test/index.php/service/patientsummary',*/
             }).then(function(response) {
                 var result = response.data;
                 for(var i = 0; i < result.length; i++){
