@@ -31,8 +31,7 @@
                   <i class="icon" ng-show="patient.status" ng-class="patient.status === 'Approved' ? 'ion-checkmark-circled' : patient.status === 'Acknowledged' ? 'ion-information-circled' :  'ion-help-circled'" title="patient.status" ng-click="openPopover()"></i> &nbsp;&nbsp;
                   <span class="patientItem col">{{patient.patient_name}}</span>
                   <span class="patientItem col">{{patient.doctor_name}}</span>
-                  <span class="patientItem editIocn col col-10" ng-click="editPatient(patient.patient_id)"><i class="ion-ios-compose-outline"></i></span>
-              </div>
+                </div>
             </ion-item>
             <ion-item  ng-show="(approvedList | filter:searchText | filter:statusFilter).length == 0">
               <p class="text-center">No Patients Found.</p>
