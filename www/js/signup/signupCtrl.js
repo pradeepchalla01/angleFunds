@@ -4,9 +4,19 @@ angular.module('angleFunds')
 	$log.debug('signup controller entered');
 	$scope.errors = {};
 	$scope.signup = {};
+	$scope.signup.typeid = 16;
+	$scope.signup.type = 'hospital';
+	$scope.selectType = function(){
+		if($scope.signup.type === 'hospital'){
+			$scope.signup.typeid = 16;
+		}else if($scope.signup.type === 'charity'){
+			$scope.signup.typeid = 1;
+		}		
+	}
 	$scope.register = function(){
+		console.log($scope.signup);
 		$scope.errors.signup = {};
-		var required = ['contactName', 'hospitalName', 'address', 'phone', 'email', 'userName', 'password', 'confirmPassword'];
+		var required = ['contact_name', 'name', 'address', 'phone_number', 'email', 'username', 'password', 'confirmPassword'];
 		angular.forEach(required, function(attr){
 			if(!$scope.signup[attr]){
 				$scope.errors.signup[attr] = 'This field is required';

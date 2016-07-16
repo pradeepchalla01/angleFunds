@@ -12,7 +12,8 @@ angular.module('angleFunds')
       var params = {
         type: AccountType
       }
-      return QueryService.query(CONSTANTS.METHOD_POST, '/masterdata', null, $httpParamSerializerJQLike(params)).then(function(result){
+      return QueryService.query(CONSTANTS.METHOD_POST, '/masterdata', null, $httpParamSerializerJQLike(params))
+      .then(function(result){
           return result.data;
         });
     }

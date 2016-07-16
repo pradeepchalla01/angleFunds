@@ -12,13 +12,25 @@
             	<div class="formDiv">
                     <label class="item item-input item-floating-label">
                         <span class="input-label">Contact Name</span>
-                        <input class="col" type="text" placeholder="Contact Name" ng-model="signup.contactName" ng-focus="hideErrorMsg('contactName','signup')">
-                        <div class="error-text" ng-show="errors.signup.contactName">{{errors.signup.contactName}}</div>
-                    </label> 
-                    <label class="item item-input item-floating-label">
+                        <input class="col" type="text" placeholder="Contact Name" ng-model="signup.contact_name" ng-focus="hideErrorMsg('contact_name','signup')">
+                        <div class="error-text" ng-show="errors.signup.contact_name">{{errors.signup.contact_name}}</div>
+                    </label>
+                    <label class="item item-input item-select">
+                        <span class="input-label">Select type</span>
+                        <select class="selectFilter" ng-model="signup.type" ng-change="selectType();">
+                          <option selected value="hospital">Hospital</option>
+                          <option value="charity">Organization</option>
+                        </select>
+                    </label>
+                    <label class="item item-input item-floating-label" ng-show="signup.typeid == 16">
                         <span class="input-label">Hospital Name</span>
-                        <input class="col" type="text" placeholder="Hospital Name" ng-model="signup.hospitalName" ng-focus="hideErrorMsg('hospitalName','signup')">
-                        <div class="error-text" ng-show="errors.signup.hospitalName">{{errors.signup.hospitalName}}</div>
+                        <input class="col" type="text" placeholder="Hospital Name" ng-model="signup.name" ng-focus="hideErrorMsg('name','signup')">
+                        <div class="error-text" ng-show="errors.signup.name">{{errors.signup.name}}</div>
+                    </label>
+                    <label class="item item-input item-floating-label" ng-show="signup.typeid == 1">
+                        <span class="input-label">Organization Name</span>
+                        <input class="col" type="text" placeholder="Organization Name" ng-model="signup.name" ng-focus="hideErrorMsg('name','signup')">
+                        <div class="error-text" ng-show="errors.signup.name">{{errors.signup.name}}</div>
                     </label>
                     <label class="item item-input item-floating-label">
                         <span class="input-label">Address</span>
@@ -27,18 +39,18 @@
                     </label>
                     <label class="item item-input item-floating-label">
                         <span class="input-label">Phone Number</span>
-                        <input class="col" type="tel" placeholder="Enter Your Mobile Number" ng-model="signup.phone" ng-focus="hideErrorMsg('phone','signup')">
-                        <div class="error-text" ng-show="errors.signup.phone">{{errors.signup.phone}}</div>
+                        <input class="col" type="tel" placeholder="Mobile Number" ng-model="signup.phone_number" ng-focus="hideErrorMsg('phone_number','signup')">
+                        <div class="error-text" ng-show="errors.signup.phone_number">{{errors.signup.phone_number}}</div>
                     </label>
                     <label class="item item-input item-floating-label">
                         <span class="input-label">Contact Email</span>
-                        <input class="col" type="text" placeholder="Enter Your Email" ng-model="signup.email" ng-focus="hideErrorMsg('email','signup')">
-                        <div class="error-text" ng-show="errors.signup.email">{{errors.signup.email}}</div>
+                        <input class="col" type="text" placeholder="Email" ng-model="signup.contact_email" ng-focus="hideErrorMsg('contact_email','signup')">
+                        <div class="error-text" ng-show="errors.signup.contact_email">{{errors.signup.contact_email}}</div>
                     </label>
                     <label class="item item-input item-floating-label">
                         <span class="input-label">User Name</span>
-                        <input class="col" type="text" placeholder="User Name" ng-model="signup.userName" ng-focus="hideErrorMsg('userName','signup')">
-                        <div class="error-text" ng-show="errors.signup.userName">{{errors.signup.userName}}</div>
+                        <input class="col" type="text" placeholder="User Name" ng-model="signup.username" ng-focus="hideErrorMsg('username','signup')">
+                        <div class="error-text" ng-show="errors.signup.username">{{errors.signup.username}}</div>
                     </label>
                     <label class="item item-input item-floating-label">
                         <span class="input-label">Password</span>
