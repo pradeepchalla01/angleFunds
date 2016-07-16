@@ -10,46 +10,46 @@
         <div>
             <div class="signupFormDiv">
             	<div class="formDiv">
-                    <div>
-                        <label>Contact Name</label>
-                        <input class="col" type="text" name="username" placeholder="Contact Name" ng-model="signup.contactName" ng-focus="hideErrorMsg('contactName','signup')">
-                        <div class="error-text text-center" ng-show="errors.signup.contactName">{{errors.signup.contactName}}</div>
-                    </div>
-                    <div>
-                        <label>Hospital Name</label>
-                        <input class="col" type="text" name="username" placeholder="Hospital Name" ng-model="signup.hospitalName" ng-focus="hideErrorMsg('hospitalName','signup')">
-                        <div class="error-text text-center" ng-show="errors.signup.hospitalName">{{errors.signup.hospitalName}}</div>
-                    </div>
-                    <div>
-                        <label>Address</label>
-                        <input class="col" type="text" name="username" placeholder="Address" ng-model="signup.address" ng-focus="hideErrorMsg('address','signup')">
-                        <div class="error-text text-center" ng-show="errors.signup.address">{{errors.signup.address}}</div>
-                    </div>
-                    <div>
-                        <label>Phone Number</label>
-                        <input class="col" type="tel" name="username" placeholder="Enter Your Mobile Number" ng-model="signup.phone" ng-focus="hideErrorMsg('phone','signup')">
-                        <div class="error-text text-center" ng-show="errors.signup.phone">{{errors.signup.phone}}</div>
-                    </div>
-                    <div>
-                        <label>Contact Email</label>
-                        <input class="col" type="email" name="username" placeholder="Enter Your Email" ng-model="signup.email" ng-focus="hideErrorMsg('email','signup')">
-                        <div class="error-text text-center" ng-show="errors.signup.userName">{{errors.signup.email}}</div>
-                    </div>
-                    <div>
-                     	<label>User Name</label>
-                        <input class="col" type="text" name="username" placeholder="User Name" ng-model="signup.userName" ng-focus="hideErrorMsg('userName','signup')">
-                        <div class="error-text text-center" ng-show="errors.signup.userName">{{errors.signup.userName}}</div>
-                    </div>
-                    <div>
-                        <label>Password</label>
-                        <input class="col" type="password" name="username" placeholder="Password" ng-model="signup.password" ng-focus="hideErrorMsg('password','signup')">
-                        <div class="error-text text-center" ng-show="errors.signup.password">{{errors.signup.password}}</div>
-                    </div>
-                    <div>
-                        <label>Confirm Password</label>
-                        <input class="col" type="password" name="username" placeholder="Confirm Password" ng-model="signup.confirmPassword" ng-focus="hideErrorMsg('confirmPassword','signup')">
-                        <div class="error-text text-center" ng-show="errors.signup.confirmPassword">{{errors.signup.confirmPassword}}</div>
-                    </div>
+                    <label class="item item-input item-floating-label">
+                        <span class="input-label">Contact Name</span>
+                        <input class="col" type="text" placeholder="Contact Name" ng-model="signup.contactName" ng-focus="hideErrorMsg('contactName','signup')">
+                        <div class="error-text" ng-show="errors.signup.contactName">{{errors.signup.contactName}}</div>
+                    </label> 
+                    <label class="item item-input item-floating-label">
+                        <span class="input-label">Hospital Name</span>
+                        <input class="col" type="text" placeholder="Hospital Name" ng-model="signup.hospitalName" ng-focus="hideErrorMsg('hospitalName','signup')">
+                        <div class="error-text" ng-show="errors.signup.hospitalName">{{errors.signup.hospitalName}}</div>
+                    </label>
+                    <label class="item item-input item-floating-label">
+                        <span class="input-label">Address</span>
+                        <input class="col" type="text" placeholder="Address" ng-model="signup.address" ng-focus="hideErrorMsg('address','signup')">
+                        <div class="error-text" ng-show="errors.signup.address">{{errors.signup.address}}</div>
+                    </label>
+                    <label class="item item-input item-floating-label">
+                        <span class="input-label">Phone Number</span>
+                        <input class="col" type="tel" placeholder="Enter Your Mobile Number" ng-model="signup.phone" ng-focus="hideErrorMsg('phone','signup')">
+                        <div class="error-text" ng-show="errors.signup.phone">{{errors.signup.phone}}</div>
+                    </label>
+                    <label class="item item-input item-floating-label">
+                        <span class="input-label">Contact Email</span>
+                        <input class="col" type="text" placeholder="Enter Your Email" ng-model="signup.email" ng-focus="hideErrorMsg('email','signup')">
+                        <div class="error-text" ng-show="errors.signup.email">{{errors.signup.email}}</div>
+                    </label>
+                    <label class="item item-input item-floating-label">
+                        <span class="input-label">User Name</span>
+                        <input class="col" type="text" placeholder="User Name" ng-model="signup.userName" ng-focus="hideErrorMsg('userName','signup')">
+                        <div class="error-text" ng-show="errors.signup.userName">{{errors.signup.userName}}</div>
+                    </label>
+                    <label class="item item-input item-floating-label">
+                        <span class="input-label">Password</span>
+                        <input class="col" type="password" placeholder="Password" ng-model="signup.password" ng-focus="hideErrorMsg('password','signup')">
+                        <div class="error-text" ng-show="errors.signup.password">{{errors.signup.password}}</div>
+                    </label>
+                    <label class="item item-input item-floating-label">
+                        <span class="input-label">Confirm Password</span>
+                        <input class="col" type="password" placeholder="Confirm Password" ng-model="signup.confirmPassword" ng-focus="hideErrorMsg('confirmPassword','signup')">
+                        <div class="error-text" ng-show="errors.signup.confirmPassword">{{errors.signup.confirmPassword}}</div>
+                    </label>
                     <div class="row btnGroup">
                         <div class="col padding-right"><button class="button button-balanced button-block registration-btn" ng-click="register()">Register</button></div>
                         <div class="col padding-right"><button class="button button-positive button-block reset-btn" ng-click="reset()">Reset</button></div>
@@ -59,7 +59,7 @@
             </div>
         </div>
         <div class="footer ng-hide">
-            <div class="footer-info text-center">
+            <div class="footer-info">
                 <p >© 2016 Angelfunds. All rights reserved | Designned By <strong> Bhaskar </strong></p>
                 <div class="col footerIcons">
                     <i class="icon ion-social-googleplus"></i>

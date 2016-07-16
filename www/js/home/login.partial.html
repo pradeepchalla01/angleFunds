@@ -12,7 +12,7 @@
                 <div class="error-text text-center" ng-show="errors.login.username">{{errors.login.username}}</div>
                 <label class="item item-input item-floating-label" ng-class="{'has-error' : errors.login.password}">
                     <span class="input-label">Password</span>
-                    <input type="text" type="password" name="Password" placeholder="Password" ng-model="loginData.password" ng-focus="hideErrorMsg('password','login')">
+                    <input type="password" name="Password" placeholder="Password" ng-model="loginData.password" ng-focus="hideErrorMsg('password','login')">
                 </label>
                 <div class="error-text text-center" ng-show="errors.login.password">{{errors.login.password}}</div>
             </div>

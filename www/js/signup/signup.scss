@@ -23,8 +23,10 @@ ion-view{
 		}
 	}
 	ion-content{
+		padding: 0 !important;
 		.scroll{
 			.signupFormDiv{
+				padding : 0;
 				h2{
 					background-color: #019dd0;
 					color: #fff;
@@ -35,26 +37,20 @@ ion-view{
     				font-weight: normal;
 				}
 				.formDiv{
-					padding: 10px;
-					div{
-						margin-bottom: 15px;
-						text-align: left;
+					padding: 0 !important;
+					label{
 						label{
 							font-size: 16px;
 						}
-						input{
-							border: 1px solid #ccc;
-							border-radius: 4px;
-							padding: 6px 12px;
-						}
 						.error-text{
-							color: #F11414;
-							margin-top: 0;
-							margin-bottom: 10px;
+							color: #F11414 !important;
+							margin: 0 !important;
+							text-align: center !important;
 						}
 					}
 					.btnGroup{
 						text-align: center;
+					    margin-top: 15px;
 						.button{
 							margin: 0;
 							&.registration-btn{
