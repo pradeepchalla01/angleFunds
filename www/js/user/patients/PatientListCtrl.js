@@ -1,11 +1,11 @@
 angular.module('angleFunds')
 
-.controller('PatientListCtrl', function($log, $scope,$location, $state, $rootScope, PatientService, store, commonService) {
+.controller('PatientListCtrl', function($log, $scope,$location, $state, $rootScope, PatientService, store, commonService, AuthService) {
 	$log.debug('PatientList controller entered');
 	$scope.isExpand = false;
 	$scope.data = {};	
 	$scope.patientList = [];
-	$scope.userData = store.get('currentUser');
+	$scope.userData = AuthService.getCurrentUser();
 	PatientService.getPatientDetails($scope.userData.hospital_id).then(function(result){
 		$scope.patientList = result;
 	});
@@ -78,8 +78,7 @@ angular.module('angleFunds')
 		//$log.debug($scope.errors.charity);
 		//calling the service method
 		if(angular.equals({}, $scope.errors.charity)) {
-			charityService.setAddcharityDetails($scope.charity)
-				 .then(function(){
+			charityService.setAddcharityDetails($scope.charity).then(function(){
 				$state.go('menu.patientList');
 			}, function(error) {
 				console.log('error', error);
