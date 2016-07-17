@@ -119,17 +119,21 @@ angular.module('angleFunds', ['ionic','onezone-datepicker', 'angular-storage'])
                     if(store){
                       config.headers['X-Auth-Token'] = store.get('token') || undefined;
                     }
+                    numOfReqs++;
                     $rootScope.$broadcast('showLoader');
-                  return config;
+                    return config;
                 },
                 'requestError': function(config) {
+                  numOfReqs--;
                   $rootScope.$broadcast('hideLoader');
                 },
                 'response': function(response){
+                  numOfReqs--;
                   $rootScope.$broadcast('hideLoader');
                   return response;
                 },
                 'responseError': function(rejection) {
+                  numOfReqs--;
                   $rootScope.$broadcast('hideLoader');
                 }
             };
