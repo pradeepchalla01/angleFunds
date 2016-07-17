@@ -5,7 +5,7 @@ angular
     function newPatientService($log, $http, QueryService, CONSTANTS) {
         var service = {
             setAddNewPatientDetails: setAddNewPatientDetails,
-            getPatientDetails: getPatientDetails
+            setUpdatePatientDetails: setUpdatePatientDetails
         };
         return service;
 
@@ -20,6 +20,17 @@ angular
             });
         }
 
+        //update patient details form patient edit page
+        function setUpdatePatientDetails(patientDetails){
+            console.log(patientDetails);
+            return $http({
+                method: 'GET',
+                url: 'AngelFunds/PatientRegistration',
+                data: patientDetails
+            }).then(function(response) {
+                return response.data;
+            });
+        }
         
 
     }

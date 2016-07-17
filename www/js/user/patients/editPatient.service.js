@@ -5,15 +5,12 @@ angular
         .factory('editPatientService', editPatientService);
 
     function editPatientService($log, $http) {
-        $log.debug('editPatientService');
         var service = {
             updatePatientDetails: updatePatientDetails
         };
         return service;
 
         function updatePatientDetails(patientId) {
-            $log.debug('****Inside editPatientService');
-
             return $http({
                 method: 'get',
                 url: 'js/user/patients/patientSummary.json',
@@ -25,9 +22,6 @@ angular
                     return result[i];
                     }
                 }
-
-               /* console.log(response);
-                return response.data;*/
             });
         }
     }
