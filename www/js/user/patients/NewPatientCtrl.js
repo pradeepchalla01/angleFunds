@@ -142,6 +142,10 @@ angular.module('angleFunds')
 
 	$scope.reset =  function(){
 		$scope.newPatient = {};
+		$scope.errors = {};
+		$scope.newPatient.onezoneDatepicker = {
+		    date: new Date("01/01/2016"), // MANDATORY                     
+		};
 	}
 	//hiding error message	
 	$scope.hideErrorMsg = function (id, key) {
