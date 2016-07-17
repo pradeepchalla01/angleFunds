@@ -32,7 +32,7 @@ angular.module('angleFunds')
 			$scope.errors.signup.confirmPassword = 'Password does not match with Confirm Password';
 		}
 		if(angular.equals({}, $scope.errors.signup)) {
-			var params = {};
+			/*var params = {};
 			params.contact_name = $scope.signup.contact_name;
 			params.typeid = $scope.signup.typeid;
 			params.name = $scope.signup.name;
@@ -41,8 +41,8 @@ angular.module('angleFunds')
 			params.contact_email = $scope.signup.contact_email;
 			params.username = $scope.signup.username;
 			params.password = $scope.signup.password;
-			params.type = $scope.signup.type;
-			AuthService.signup(params);
+			params.type = $scope.signup.type;*/
+			AuthService.signup($scope.signup);
 			$scope.openLoginModal();
 		}
 	}
