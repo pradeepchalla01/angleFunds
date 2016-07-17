@@ -25,12 +25,13 @@ angular.module('angleFunds')
 	}
 })
 
-.controller('fundPatientsCtrl', function($log, $scope,$location, $state, patientFactory ) {
+.controller('fundPatientsCtrl', function($log, $scope,$location, $state, PatientService, AuthService) {
 	$log.debug('PatientList for seeking funds controller entered');
 	$scope.isExpand = false;
 	$scope.data = {};	
 	$scope.patientList = [];
-	patientFactory.getPatientList().then(function(result){
+	$scope.userData = AuthService.getCurrentUser();
+	PatientService.getPatientDetails($scope.userData.hospital_id).then(function(result){
 		$scope.patientList = result;
 	});
 	$scope.editPatient = function(patientId){
