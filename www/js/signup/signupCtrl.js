@@ -42,8 +42,9 @@ angular.module('angleFunds')
 			params.username = $scope.signup.username;
 			params.password = $scope.signup.password;
 			params.type = $scope.signup.type;*/
-			AuthService.signup($scope.signup);
-			$scope.openLoginModal();
+			AuthService.signup($scope.signup).then(function(argument) {
+				$scope.openLoginModal();
+			});			
 		}
 	}
 	$scope.openLoginModal = function() {
