@@ -64,6 +64,8 @@ angular.module('angleFunds')
     }
     $scope.reset = function () {
       	$scope.signup = {};
+      	$scope.signup.typeid = 16;
+		$scope.signup.type = 'hospital';
       	$scope.errors.signup = {};
     }
 });
