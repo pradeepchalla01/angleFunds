@@ -29,6 +29,21 @@ ion-view {
 					margin-top: 10px;
 				}
 			}
+			.onezone-content {
+				.onezone-transclude{
+					.button-block{
+					    text-align: left;
+					    border: none;
+					    color: #111;
+					    font-size: 14px;
+					    margin: 0;
+					    &.activated{
+					    	background-color : transparent !important;
+					    }
+					}
+
+				}
+			}
 			.save-patient-details {
 				text-align: center !important;
 				.button{

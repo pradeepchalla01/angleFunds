@@ -15,7 +15,7 @@
       </label>
       <span class="input-label date-of-birth">Date Of Birth</span> 
         <onezone-datepicker datepicker-object="newPatient.onezoneDatepicker" >
-            <button class="button button-block button-outline button-positive show-onezone-datepicker" ng-model="newPatient.date_of_birth">{{newPatient.date_of_birth }} 
+            <button class="button button-block button-outline button-positive show-onezone-datepicker" ng-model="newPatient.onezoneDatepicker">{{newPatient.onezoneDatepicker.date | date:'dd MMMM yyyy'}} 
             </button>
       </onezone-datepicker>
       <label class="item item-input item-select">

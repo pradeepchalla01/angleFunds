@@ -1,6 +1,6 @@
 angular.module('angleFunds')
 	   .controller('editPatientCtrl', function($scope, editPatientService, $state, 
-	   	$stateParams, CONSTANTS, newPatientService) {
+	   	$stateParams, CONSTANTS, newPatientService, $filter) {
 	   	var vm = this;
 	   	$scope.loading = true;
 	 	var patientId = $stateParams.id;
@@ -16,6 +16,15 @@ angular.module('angleFunds')
 	 					  	console.log(result);
 	 					  	date = result.date_of_birth;
 	 					  	$scope.newPatient =  result;	
+	 					  	if(result.date_of_birth !== "0000-00-00"){
+		 					  	$scope.newPatient.onezoneDatepicker = {
+							 		date: new Date(result.date_of_birth)
+							 	};
+						 	} else {
+						 		$scope.newPatient.onezoneDatepicker = {
+						 			date: new Date()
+						 		}
+						 	}
 	 					  	var date = $scope.newPatient.date_of_birth;
 						 	vm.gen = $scope.newPatient.gender;
 						 	var duration_type = $scope.newPatient.duration_type;
@@ -73,6 +82,7 @@ angular.module('angleFunds')
 			$scope.errors.newPatient.organization = "please select atleast one organization";
 		}*/
 			if(angular.equals({}, $scope.errors.newPatient)) {
+				$scope.newPatient.date_of_birth = $filter('date')($scope.newPatient.onezoneDatepicker.date, "yyyy-MM-dd");
 				newPatientService.setUpdatePatientDetails($scope.newPatient)
 					 .then(function(){
 					$state.go('menu.patientList');
