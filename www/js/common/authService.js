@@ -6,7 +6,7 @@ angular.module('angleFunds')
     var _authService = {
         signup: function(data) {
             var method = 'POST';
-            var url = '/auth/signup';
+            var url = '/registration';
             QueryService.query(method, url, null, data).then(function(result){
                 console.log(result);
                 return result;

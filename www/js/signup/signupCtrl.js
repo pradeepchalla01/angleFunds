@@ -16,7 +16,7 @@ angular.module('angleFunds')
 	$scope.register = function(){
 		console.log($scope.signup);
 		$scope.errors.signup = {};
-		var required = ['contact_name', 'name', 'address', 'phone_number', 'email', 'username', 'password', 'confirmPassword'];
+		var required = ['contact_name', 'name', 'address', 'phone_number', 'contact_email', 'username', 'password', 'confirmPassword'];
 		angular.forEach(required, function(attr){
 			if(!$scope.signup[attr]){
 				$scope.errors.signup[attr] = 'This field is required';
@@ -25,14 +25,24 @@ angular.module('angleFunds')
 		if($scope.signup.phone && !CONSTANTS.PHONE_REGEX.test($scope.signup.phone)){
 			$scope.errors.signup.phone = 'Please enter valid Phone Number'
 		}
-		if($scope.signup.email && !CONSTANTS.EMAIL_REGEX.test($scope.signup.email)){
-			$scope.errors.signup.email = 'Please enter valid Contact Email'
+		if($scope.signup.contact_email && !CONSTANTS.EMAIL_REGEX.test($scope.signup.contact_email)){
+			$scope.errors.signup.contact_email = 'Please enter valid Contact Email'
 		}
 		if($scope.signup.password && $scope.signup.confirmPassword && $scope.signup.password != $scope.signup.confirmPassword){
 			$scope.errors.signup.confirmPassword = 'Password does not match with Confirm Password';
 		}
 		if(angular.equals({}, $scope.errors.signup)) {
-			AuthService.signup($scope.signup);
+			var params = {};
+			params.contact_name = $scope.signup.contact_name;
+			params.typeid = $scope.signup.typeid;
+			params.name = $scope.signup.name;
+			params.address = $scope.signup.address;
+			params.phone_number = $scope.signup.phone_number;
+			params.contact_email = $scope.signup.contact_email;
+			params.username = $scope.signup.username;
+			params.password = $scope.signup.password;
+			params.type = $scope.signup.type;
+			AuthService.signup(params);
 			$scope.openLoginModal();
 		}
 	}
