@@ -12,7 +12,7 @@ angular
 
         function setAddNewPatientDetails(patientDetails) {
             return $http({
-                method: 'GET',
+                method: CONSTANTS.METHOD_GET,
                 url: 'AngelFunds/PatientRegistration',
                 data: patientDetails
             }).then(function(response) {
@@ -24,7 +24,7 @@ angular
         function setUpdatePatientDetails(patientDetails){
             console.log(patientDetails);
             return $http({
-                method: 'GET',
+                method: CONSTANTS.METHOD_GET,
                 url: 'AngelFunds/PatientRegistration',
                 data: patientDetails
             }).then(function(response) {

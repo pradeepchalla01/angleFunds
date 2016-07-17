@@ -4,7 +4,7 @@ angular
         .module('angleFunds')
         .factory('editPatientService', editPatientService);
 
-    function editPatientService($log, $http) {
+    function editPatientService($log, $http, CONSTANTS) {
         var service = {
             updatePatientDetails: updatePatientDetails
         };
@@ -12,7 +12,7 @@ angular
 
         function updatePatientDetails(patientId) {
             return $http({
-                method: 'get',
+                method: CONSTANTS.METHOD_GET,
                 url: 'js/user/patients/patientSummary.json',
                 /*url: 'http://localhost/test/index.php/service/patientsummary',*/
             }).then(function(response) {
