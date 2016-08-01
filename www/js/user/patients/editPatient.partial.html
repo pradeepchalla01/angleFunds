@@ -7,23 +7,21 @@
     <h2 class="title">EDIT PATIENT</h2>
 </ion-header-bar>
     <ion-content>
-    <div class="list newPatient-registration">
+    <div class="list newPatient-registration"  ng-if="!loading">
       <label id="madhu" class="item item-input item-floating-label">
           <span id="name" class="input-label">Patient Name</span>
           <input type="text" ng-model="newPatient.patient_name" placeholder="Patient Name" ng-focus="hideErrorMsg('patient_name','newPatient')" ng-click="modifyParentClass()">
           <span class="error-message"  ng-show="errors.newPatient.patient_name">{{errors.newPatient.patient_name}}</span>
       </label>
       <span class="input-label date-of-birth">Date Of Birth</span> 
-       <onezone-datepicker datepicker-object="newPatient.onezoneDatepicker" >
-            <button class="button button-block button-outline button-positive show-onezone-datepicker" ng-model="newPatient.date_of_birth">{{newPatient.date_of_birth }} 
+        <onezone-datepicker datepicker-object="newPatient.onezoneDatepicker" >
+            <button class="button button-block button-outline button-positive show-onezone-datepicker" ng-model="newPatient.onezoneDatepicker">{{newPatient.onezoneDatepicker.date | date:'dd MMMM yyyy'}} 
             </button>
-      </onezone-datepicker> 
+      </onezone-datepicker>
       <label class="item item-input item-select">
-          <div class = "input-label" style="height:45px;">Gender</div>
-            <select>
-              <option value = "male">Male</option>
-              <option value = "female">Female</option>
-            </select>
+          <div class = "input-label" style="height:45px;" >Gender </div>
+          <select data-ng-options="o.name for o in options" data-ng-model="selectedOption">
+          </select>
       </label>
       <label class="item item-input item-floating-label">
           <span class="input-label">Parent/Guardian Name</span>
@@ -75,7 +73,7 @@
       </label>
       <label class="item item-input item-floating-label">
           <span class="input-label">Type of Treatment</span>
-          <input type="text" ng-model="newPatient.duration_type" placeholder="Type of Treatment" ng-focus ="hideErrorMsg('duration_type','newPatient')">
+          <input type="text" ng-model="newPatient.duration_type" placeholder="Type of Treatment" ng-focus ="hideErrorMsg('duration_type','newPatient')"> 
           <span class="error-message"  ng-show="errors.newPatient.duration_type">{{errors.newPatient.duration_type}}</span>
       </label>
       <label class="item item-input item-floating-label">
@@ -88,7 +86,7 @@
           <input type="text" ng-model="newPatient.monthly_family_income" placeholder="Monthly Family Income" ng-focus ="hideErrorMsg('monthly_family_income','newPatient')">
           <span class="error-message"  ng-show="errors.newPatient.monthly_family_income">{{errors.newPatient.monthly_family_income}}</span>
       </label>
-
+<!-- 
       <div style="color: #444; display: table; padding: 10px; font-size: 20px;">Job holders in family</div>
       <div class="row">
           <div class="name-occupation col col-50">
@@ -111,14 +109,14 @@
            <label class="checkbox"><input type="checkbox" ng-checked="selection.indexOf(organization) > -1" ng-click="toggleSelection(organization)" value="{{organization}}" ng-focus ="hideErrorMsg('organization','newPatient')"></label>{{ organization}}
         </li>
       </ul>
-      <span class="error-message"  ng-show="errors.newPatient.organization">{{errors.newPatient.organization}}</span>
+      <span class="error-message"  ng-show="errors.newPatient.organization">{{errors.newPatient.organization}}</span> -->
       <div class="col btnGroup save-patient-details">
           <button class="button button-balanced" ng-click="savePatientDetails()">Register</button>
           <button class="button button-positive" ng-click="reset()">Reset</button>
       </div>
     </div> 
-    <div ng-if="loading" style="margin-left: auto; margin-right: auto; margin-top: 100px;text-align: center;">
+  </ion-content>
+    <div ng-if="loading " style="margin-left: auto; margin-right: auto; margin-top: 100px;text-align: center;">
       <img src="img/loading.gif">
     </div>
-  </ion-content>
 </ion-view>

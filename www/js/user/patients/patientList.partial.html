@@ -28,7 +28,7 @@
 	      	<ion-list>
 		    	<ion-item ng-repeat="patient in patientList | filter:searchText | filter:statusFilter" class="item-remove-animate">
 	          		<div class="patientDiv row">
-		          		<i class="icon" ng-show="patient.status" ng-class="patient.appliction_status === 'accepted' ? 'ion-checkmark-circled' : 'ion-close-circled'" ng-click="openPopover()"></i> &nbsp;&nbsp;
+		          		<i class="icon" ng-show="patient.status" ng-class="patient.status === '1' ? 'ion-checkmark-circled' : 'ion-close-circled'" ng-click="openPopover()"></i> &nbsp;&nbsp;
 		          		<span class="patientItem col">{{patient.patient_name}}</span>
 		          		<span class="patientItem col">{{patient.doctor_name}}</span>
 		          		<span class="patientItem editIocn col col-10" ng-click="editPatient(patient.patient_id)"><i class="ion-ios-compose-outline"></i></span>

@@ -1,31 +1,40 @@
 <ion-view view-title="Patient List">
-  <ion-nav-buttons side="secondary">
-      <button class="button button-calm button-clear show-edit-btn" ng-click="data.showEdit = !data.showEdit">
-        Edit
-    </button>
-    </ion-nav-buttons>
   <ion-header-bar class="bar-subheader signup-header">
       <h2 class="title">List of Patients Approved</h2>
   </ion-header-bar>
     <ion-content>
       <div class="patientList">
-          <!-- <button class="button" ng-click="data.showEdit = !data.showEdit">
-            Edit
-          </button> -->
-          <ion-list show-reorder="data.showEdit">
-          <ion-item ng-repeat="patient in approvedList" class="item-remove-animate">
-                  <ion-reorder-button class="ion-ios-compose-outline" 
-                    ng-click="editPatient(patient.patient_id)">
-          </ion-reorder-button>
-                <div class="patientDiv" ng-click="isExpand = !isExpand;">
-                  <span>{{patient.patient_name}} &nbsp;&nbsp;<span class="button" ng-class="{'approved-badge' : patient.status === 'Approved', 'acknowledge-badge' : patient.status === 'Acknowledged', 'pending-badge' : patient.status === 'Pending'}">{{patient.status}}</span></span> 
-                <span class="arrowIcon" ng-show="!isExpand"><i class="icon ion-chevron-down"></i></span>
-                  <span class="arrowIcon" ng-show="isExpand"><i class="icon ion-chevron-up"></i></span>
-              </div>
-              <div class="patient-details" ng-show="isExpand">
-                <div class="row"><span class="col-60">Doctor Name: </span><span>{{patient.doctor_name}}</span></div>
-                <div class="row"><span class="col-60">Patient Application: </span><span>{{patient.stage}}</span></div>
-              </div>
+        <div class="bar bar-header item-input-inset">
+          <div class="item-input-wrapper">
+            <i class="icon ion-ios-search placeholder-icon"></i>
+            <input type="search" placeholder="Search" ng-model="searchText">
+            <i class="icon ion-close-circled" ng-show="searchText.length" ng-click="searchText = ''"></i>
+          </div>
+          <label class="item item-input item-select">
+            <div class="input-label">
+            </div>
+            <select class="selectFilter" ng-model="filter" ng-change="status(filter);searchText = ''">
+              <option selected value="">All</option>
+              <option value="Approved">Approved</option>
+              <option value="Pending">Rejected</option>
+            </select>
+          </label>
+      </div>
+        <div class="listHeader row">
+          <span class="header pdr0 col">PATIENT</span>
+          <span class="header pdl0 col">DOCTOR</span>
+          <span class="col col-10"></span>
+      </div>
+          <ion-list>
+          <ion-item ng-repeat="patient in approvedList | filter:searchText | filter:statusFilter" class="item-remove-animate charity-list" ng-show="approvedList.length">
+                <div class="patientDiv row">
+                  <i class="icon" ng-show="patient.status" ng-class="patient.status === 'Approved' ? 'ion-checkmark-circled' : patient.status === 'Acknowledged' ? 'ion-information-circled' :  'ion-help-circled'" title="patient.status" ng-click="openPopover()"></i> &nbsp;&nbsp;
+                  <span class="patientItem col">{{patient.patient_name}}</span>
+                  <span class="patientItem col">{{patient.doctor_name}}</span>
+                </div>
+            </ion-item>
+            <ion-item  ng-show="(approvedList | filter:searchText | filter:statusFilter).length == 0">
+              <p class="text-center">No Patients Found.</p>
             </ion-item>
           </ion-list>
       </div>

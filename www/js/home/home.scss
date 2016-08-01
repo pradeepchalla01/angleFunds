@@ -18,13 +18,13 @@
 }
 ion-view{
 	&.home-container{
-		background-image: url("../img/app_logo.jpg");
-		background-size: cover;
+		/*background-image: url("../img/app_logo.jpg");
+		background-size: cover;*/
+		background-color: #6a6a6a;
 		.home-content{
 			.scroll{
 				height: 100%;
 				.imgDiv{
-					border-bottom: 1px solid #efefef;
 					img{
 						width: 100%;
 						height: 175px;

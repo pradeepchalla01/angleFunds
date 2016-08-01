@@ -1,7 +1,17 @@
 angular.module('angleFunds')
 
-.controller('homeCtrl', function($log, $ionicModal, $scope, $rootScope, $state, AuthService) {
+.controller('homeCtrl', function($log, $ionicModal, $scope, $rootScope, $state, AuthService, store) {
 	$log.debug('home controller entered');
+	
+	// redirecting to corresponding account dshboard if user already logged in based on account type
+	if(AuthService.getCurrentUser()){
+		if(AuthService.getAccountType() === 'hospital'){
+			$state.go('menu.patientList');
+		}
+		else if(AuthService.getAccountType() === 'org'){
+			$state.go('menu.fundPatients');
+		}	
+	}
 	$scope.loginData = {};
 	$scope.errors = {};
 	$ionicModal.fromTemplateUrl('js/home/login.partial.html', {
@@ -35,9 +45,8 @@ angular.module('angleFunds')
 		console.log('login function');
 		if(angular.equals({}, $scope.errors.login)) {
 			$scope.loginData.type = $scope.loginType;
-			//AuthService.login($scope.loginData).then(function(result){
-				//console.log(result);
-				//if(result.status === 1){
+			AuthService.login($scope.loginData).then(function(result){
+				if(result.data.status === 1){
 					$scope.closeLoginModal();
 					if($scope.loginType === 'hospital'){
 						$state.go('menu.patientList');
@@ -45,10 +54,10 @@ angular.module('angleFunds')
 					else if($scope.loginType === 'org'){
 						$state.go('menu.fundPatients');
 					}	
-				//} else {
-				//	$scope.errors.login.password = result.message[1];
-				//}
-			//});
+				} else {
+					$scope.errors.login.password = result.data.message[1];
+				}
+			});
 			
 		}
 	}

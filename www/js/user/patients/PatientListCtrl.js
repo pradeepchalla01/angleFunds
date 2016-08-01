@@ -1,12 +1,20 @@
 angular.module('angleFunds')
 
-.controller('PatientListCtrl', function($log, $scope,$location, $state, patientFactory ) {
+.controller('PatientListCtrl', function($log, $scope,$location, $state, $rootScope, PatientService, store, commonService, AuthService) {
 	$log.debug('PatientList controller entered');
 	$scope.isExpand = false;
 	$scope.data = {};	
 	$scope.patientList = [];
-	patientFactory.getPatientList().then(function(result){
+	$scope.userData = AuthService.getCurrentUser();
+	PatientService.getPatientDetails($scope.userData.hospital_id).then(function(result){
 		$scope.patientList = result;
+	});
+
+	// api service for master data
+	// calling the service for reference
+	// remove when known appropriate controller to call from
+	commonService.getMasterData(store.get('accountType')).then(function(result){
+		console.log(result);
 	});
 	$scope.editPatient = function(patientId){
 		var id = patientId; 	
@@ -17,12 +25,13 @@ angular.module('angleFunds')
 	}
 })
 
-.controller('fundPatientsCtrl', function($log, $scope,$location, $state, patientFactory ) {
+.controller('fundPatientsCtrl', function($log, $scope,$location, $state, PatientService, AuthService) {
 	$log.debug('PatientList for seeking funds controller entered');
 	$scope.isExpand = false;
 	$scope.data = {};	
 	$scope.patientList = [];
-	patientFactory.getPatientList().then(function(result){
+	$scope.userData = AuthService.getCurrentUser();
+	PatientService.getPatientDetails($scope.userData.hospital_id).then(function(result){
 		$scope.patientList = result;
 	});
 	$scope.editPatient = function(patientId){
@@ -36,14 +45,9 @@ angular.module('angleFunds')
 })
 
 .controller('approvedPatientsCtrl', function($scope, patientFactory){
+	$scope.approvedList = [];
 	patientFactory.getPatientList().then(function(result){
-		console.log(result);
-		$scope.approvedList = [];
-		angular.forEach(result, function(patient){
-			if(patient.status === 'Approved'){
-				$scope.approvedList.push(patient);
-			}
-		})
+		$scope.approvedList = result;
 	});
 })
 .controller('editOrgPatinetInfoCtrl', function($scope, patientFactory, CONSTANTS){
@@ -75,14 +79,12 @@ angular.module('angleFunds')
 		//$log.debug($scope.errors.charity);
 		//calling the service method
 		if(angular.equals({}, $scope.errors.charity)) {
-			charityService.setAddcharityDetails($scope.charity)
-				 .then(function(){
+			charityService.setAddcharityDetails($scope.charity).then(function(){
 				$state.go('menu.patientList');
 			}, function(error) {
 				console.log('error', error);
 				$state.go('menu.patientList');
 			}); 
-			
 		}
 	}
 });

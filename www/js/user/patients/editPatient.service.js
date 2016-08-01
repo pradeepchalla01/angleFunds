@@ -4,19 +4,17 @@ angular
         .module('angleFunds')
         .factory('editPatientService', editPatientService);
 
-    function editPatientService($log, $http) {
-        $log.debug('editPatientService');
+    function editPatientService($log, $http, CONSTANTS) {
         var service = {
             updatePatientDetails: updatePatientDetails
         };
         return service;
 
         function updatePatientDetails(patientId) {
-            $log.debug('****Inside editPatientService');
-
             return $http({
-                method: 'get',
-                url: 'js/user/patients/patientList.json',
+                method: CONSTANTS.METHOD_GET,
+                url: 'js/user/patients/patientSummary.json',
+                /*url: 'http://localhost/test/index.php/service/patientsummary',*/
             }).then(function(response) {
                 var result = response.data;
                 for(var i = 0; i < result.length; i++){
@@ -24,9 +22,6 @@ angular
                     return result[i];
                     }
                 }
-
-               /* console.log(response);
-                return response.data;*/
             });
         }
     }

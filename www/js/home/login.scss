@@ -10,9 +10,16 @@
 			background-color: #F9B1AB;
 		}	
 		.scroll{
+		    .input-label {
+		    	color: #336699;
+		    }
 		    padding: 0 20px 20px;
+		    .ion-android-add-circle {
+					color: #336699;
+				}
 			.iconDiv{
 				padding: 15px 0;
+				
 				.icon{
 					color: #7D3F98;
 					font-size: 90px;
