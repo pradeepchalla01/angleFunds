@@ -1,0 +1,39 @@
+Url: http://nmrangelfunds.org/test/index.php/service/patientregister
+method: post
+parameters: patient_name=test&date_of_birth=2106-06-06&gender=male&parent_guardian_name=sree&primary_phone_number=9999999999&alternate_phone_number=666666698&patient_email=srkanth77@gmai.com&doctor_name=sreee&diagnosis=hhsa&stage=ok&disease_id=1&duration_of_treatment=1&treatment_type_id=1&approximate_cost=192.29&monthly_family_income=333.44&name1=sreeeee&name2=&name3=&adddiseasename=&user_id=1&logged=patient&occupation1=add&occupation2=1&occupation3=1&addoccupation1=testocc&addoccupation2=&addoccupation3=&Basic_email_template=
+
+
+response : 
+{
+	"status":1,
+	"data":true,
+	"message":	["ERROR_211","Patient registation is successfully complete ."],
+	"response":1
+}
+
+
+2) add disages:
+
+parameters: patient_name=test&date_of_birth=2106-06-06&gender=male&parent_guardian_name=sree&primary_phone_number=9999999999&alternate_phone_number=666666698&patient_email=srkanth77@gmai.com&doctor_name=sreee&diagnosis=hhsa&stage=ok&disease_id=add&duration_of_treatment=1&treatment_type_id=1&approximate_cost=192.29&monthly_family_income=333.44&name1=sreeeee&name2=&name3=&adddiseasename=testdes&user_id=1&logged=patient&occupation1=1&occupation2=1&occupation3=1&addoccupation1=&addoccupation2=&addoccupation3=&Basic_email_template=
+
+response : 
+{	
+	"status":1,
+	"data":true,
+	"message":	["ERROR_211","Patient registation is successfully complete ."],
+	"response":1
+}
+
+
+3) add occupation
+
+
+parameters: patient_name=test&date_of_birth=2106-06-06&gender=male&parent_guardian_name=sree&primary_phone_number=9999999999&alternate_phone_number=666666698&patient_email=srkanth77@gmai.com&doctor_name=sreee&diagnosis=hhsa&stage=ok&disease_id=1&duration_of_treatment=1&treatment_type_id=1&approximate_cost=192.29&monthly_family_income=333.44&name1=sreeeee&name2=&name3=&adddiseasename=&user_id=1&logged=patient&occupation1=add&occupation2=1&occupation3=1&addoccupation1=testocc&addoccupation2=&addoccupation3=&Basic_email_template=
+
+response : 
+	{
+		"status":1,
+		"data":true,
+		"message":	["ERROR_211","Patient registation is successfully complete ."],
+		"response":1
+	}
